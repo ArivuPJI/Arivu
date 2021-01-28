@@ -1,0 +1,439 @@
+@font-face {
+    font-family: 'FonteMuli';
+    src: url('./fontes/muli-variablefont_wght-webfont.woff2') format('woff2'),
+         url('./fontes/muli-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body
+{
+    font-family: 'FonteMuli';
+    margin: 0 auto;
+    padding:  0%;
+}
+
+    /* Aqui fica a navegação lateral e tudo dentro dela (Feed, Agenda, Criar, etc) */
+    .NavegaçãoLateral
+    {
+        position: fixed;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        top: 0%;
+        width: 350px;
+        height: 880px;
+        background-color: #131432;
+    }
+    h1
+    {
+        color: white;
+        margin-left: 84px;
+        margin-top: 60px;
+        font-size: 25px;
+    }
+    .LogoLateral
+    {
+        margin-left: 25px;
+        margin-top: 49px;
+        position: absolute;
+    }
+
+        /* Mudando os links dentro da navegação lateral */
+        
+        .liLateral
+        {
+            position: fixed;
+            margin-top: 100px;
+        }
+            .liLateral li
+            {
+                list-style: none;
+                width: 145px;
+                margin-top: 5px;
+                padding-top: 20px;
+                padding-bottom: 16px;
+                padding-left: 90px;
+            }
+                .liLateral li a
+                {
+                    list-style: none;
+                    color: rgb(186, 186, 186);
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+                
+            .LateralSelecionado
+            {
+                background-color: #181936;
+                border-left: 5px solid white;
+                border-radius: 5px;
+            }
+            .LateralSelecionado b
+            {
+                font-size: 18px;
+                color: white;
+            }
+
+        /* ----------------------------------------------- */
+
+    /* --------------------------------------------------------- */
+
+    /* Parte do conteúdo principal da página */
+     
+    .BodyConteudo
+    {
+        display: flex;
+        position: fixed;
+        top: -3px;
+        left: 240px;
+        width: 1190px;
+        height: 885px;
+        background-color: white;
+        border-radius: 50px;
+        z-index: 2;
+    }
+
+            .NavegaçãoSuperior
+            {
+                position: fixed;
+                width: 1200px;
+                height: 100px;
+                margin-left: 50px;
+                margin-top: 0px;
+            }
+
+
+                /* Estilização dos links superiores */
+                .aSuperior
+                {
+                    padding-top: 40px;
+                }
+
+                    .aSuperior a
+                    {
+                        color: #D1D0D0;
+                        display: inline;
+                        text-decoration: none;
+                        padding-right: 20px;
+                        padding-left: 20px;
+                        font-size: 20px;
+                        margin: 10px;
+                    }
+
+                .SuperiorSelecionado b
+                {
+                    color: #A986DE;
+                    border-bottom: 5px #A986DE solid;
+                    padding-bottom: 10px;
+                    padding-right: 20px;
+                    padding-left: 20px;
+                    font-size: 20px;
+                }
+                
+                /*Pesquisa*/
+                .Pesquisa{
+                    position: absolute;
+                    right: 150px;
+                    top: 30px;
+                }
+
+                /* ------------------------------------- */
+
+                /* Pulicações */
+
+            .Publicações
+            {
+                overflow: auto;
+                width: 1190px;
+                height: 770px;
+                margin: 0 auto;
+                margin-top: 110px;
+            }
+            ::-webkit-scrollbar
+            {
+                width: 10px;
+                
+            }
+        
+            ::-webkit-scrollbar-thumb
+            {
+                background-color: #131432;
+                border-radius: 50px;
+            }
+        
+
+                .PublicaçõesEvento
+                {
+                    position: relative;
+                    height: 390px;
+                    width: 680px;
+                    background-color: #ffffff;  
+                    margin: 0 auto;
+                    margin-top: 50px;
+                    margin-bottom: 130px;
+                    box-shadow: 0px 0px 20px rgba(174, 174, 174, 0.514);
+                    padding-top: 1px;
+                }
+                    .DescriçãoEvento 
+                    {
+                        height: 220px;
+                        width: 646px;
+                        background-color: #d1d0d053;
+                        margin: 12px;
+                    }
+                        .PublicaçõesEvento p
+                        {
+                            position: relative;
+                            font-size: 15px;
+                            padding-left: 10px;
+                            padding-top: 10px;
+                        }
+
+                    .TituloEvento
+                    {
+                        width: 637px;
+                        height: 50px;
+                        background-color: #bebebe;
+                        margin: 0 auto;
+                        margin-top: -70px;
+                        padding-left: 20px; 
+                    }
+
+                        .TituloEvento h2
+                        {
+                            margin: 20px;
+                            padding-top: 10px;
+                            color: white;
+                        }
+                        
+                        #DividirPublicação
+                        {
+                            width: 900px;
+                            height: auto;
+                            overflow: hidden;
+                            margin: 0 auto;
+                            margin-top: -19px;
+                            padding: 10px;
+                        }
+                        .Teste
+                        {
+                            width: 212px;
+                            height: 100px;
+                            float: left;
+                            border-left: 1px solid #D1D0D0;
+                            border-right: 1px solid #D1D0D0;
+                            text-align: center;
+                            margin-left: 5px;
+                        }
+                        .Teste p
+                        {
+                            top: 40px;
+                            margin-top: -20px
+                        }
+                        .Teste p b
+                        {
+                            font-size: 20px;
+                        }
+                        hr
+                        {
+                            margin-top: 18px;
+                        }
+            
+
+            
+    /* Lateral Direita */
+    .LateralDireita
+    {
+        position: fixed;
+        width: 370px;
+        height: 870px;
+        background-color: #F6F9FE;
+        right: 0px;
+        border-radius: 50px;
+        z-index: 1;
+    }
+        .LateralDireita form
+        {
+            margin-left: 42px;
+        }
+            .CorpoFiltros
+            {
+                position: absolute;
+                width: 280px;
+                height: 402px;
+                background-color: white;
+                margin-top: 70px;
+                margin-left: 32px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 20px rgba(202, 202, 202, 0.472);
+                padding-top: 145px;
+            }
+
+                /* Estilizando checkbox */ 
+                input[type='radio']
+                {
+                    display: none;
+                }
+                label
+                {
+                    font-size: 17px;
+                    color: gray;
+                    display: flex;
+                    cursor: pointer;
+                    padding: 15px 60px;
+                    border-bottom: 1px solid #bebebe4a ;
+                }
+                label::before
+                {
+                    font-size: 20px;
+                    margin-left: 20px;
+                    height: 30px;
+                    border-left: 2px solid #01cc65;
+                    background-color: #E6F8E6;
+                    border-bottom: 1px solid #bebebe4a ;
+                }
+                input:checked + label
+                {
+                    border-left: 2px solid #01cc65;
+                    color: gray;
+                    background-color: #E6F8E6;
+                    border-bottom: 1px solid #bebebe4a ;
+                }
+                input:checked + label:before
+                {
+                    border: 10px solid white;
+                    border-left: 2px solid #01cc65;
+                    background-color: #E6F8E6;
+                    border-bottom: 1px solid #bebebe4a ;
+                }
+
+                /*--------------------------------------*/
+
+
+        .CorpoFiltros b p
+        {
+            font-size: 22px;
+            margin-top: -130px;
+            margin-left: 30px;
+            color: #434040;
+        }
+
+        .Selecionar
+        {
+            font-size: 13px;
+            color: #8C8A8A;
+            margin-top: -19px;
+            padding-left: 30px;
+            margin-bottom: 0px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #bebebe4a ;
+        }
+
+        /* Botão para filtrar as matérias */
+        .btnFiltrar input[type="submit"]
+        {
+            position: absolute;
+            margin-top: 635px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: gray;
+            background-color: white;
+            padding: 8px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-left: 65%;
+            box-shadow: 0px 0px 10px rgba(188, 188, 188, 0.444);
+        }
+        .btnFiltrar input[type="submit"]:hover
+        {
+            position: absolute;
+            margin-top: 635px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: gray;
+            background-color: white;
+            padding: 8px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-left: 65%;
+            box-shadow: 0px 0px 10px rgba(188, 188, 188, 0.444);
+            border-left: 2px solid #01cc65;
+        }
+
+        .Pesquisar
+        {
+            right: 40px;
+            position: relative;
+            width: 190px;
+            height: 45px;
+        }
+        .Pesquisar .input
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding-left: 75px;
+            border-radius: 10px;
+            background-color: #F6F9FE;
+            border: none;
+        }
+        .Pesquisar .PesquisarIcone 
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 100%;
+            background-color: #dfeef1;
+            z-index: 1;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .fas
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(255, 255, 255);
+            font-size: 18px;
+        }
+        textarea:focus, input:focus, select:focus {
+            box-shadow: 0 0 0 0;
+            border: 0 none;
+            outline: 0;
+        } 
+
+
+        /* AJUSTANDO A TELA DE RESUMO, A MEDIDA DAS PUBLICAÇÕES */
+
+        .PublicaçõesResumo
+        {
+            margin: 0 auto;
+            height: 323px;
+            width: 800px;
+            background-color: white;
+            box-shadow: 0px 0px 20px rgba(164, 164, 164, 0.333);
+            margin-top: 40px;
+            padding-top: 14px;
+        }
+        .DescriçãoResumo
+        {
+            margin: 0 auto;
+            height: 230px;
+            width: 748px;
+            background-color: #d7d7d771;
+            padding: 14px;
+        }
+        .TituloResumo
+        {
+            margin-left: 30px;
+            font-size: 15px;
+        }

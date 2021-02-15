@@ -18,19 +18,20 @@ if(!empty($_SESSION['id_usuario'])){
 </head>
 <body>
 	<div class="NavegaçãoLateral"> <!--Navegação  Lateral -->
-		<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+		<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Arivu</h1>
 		<div class="liLateral">
-				<li><a href="../../Feed/Feed_Eventos.php">Feed</a></li>
-				<li><a href="">Provas</a></li>
+				<li><a href="../Feed/Feed_Eventos.php">Feed</a></li>
+				<li class="LateralSelecionado"><a href=""><b>Provas</b></a></li>
 				<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
 				<li><a href="">Agenda</a></li>
 				<li><a href="">Perfil</a></li>
-				<li class="LateralSelecionado"><a href="../Criar/Criar_Evento.php"><b>Criar</b></a></li>
+				<li><a href="../Criar/Criar_Evento.php">Criar</a></li>
 				<?php } ?>
 				<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
 				
 		</div>
 	</div>
+
 	<?php
 	//Pegando os valores das checkbox do lateral direita
     $Materia = "";
@@ -102,12 +103,7 @@ if(!empty($_SESSION['id_usuario'])){
 	<div class="BodyConteudo"> <!-- Corpo, onde fica todo  conteudo do site -->
         <div class="NavegaçãoSuperior"> <!-- Parte superior  -->
             <div class="aSuperior"> 
-				<a href="../Resumos/Criar_Resumo.php"><b>Resumos</b></a>
-				<?php if($_SESSION['Restricao'] == "Professor"){?>
-				<a href="../Eventos/Criar_Evento.php"><b>Eventos</b></a>
                 <a class="SuperiorSelecionado" href="Criar_Prova.php"><b>Provas</b></a>
-				<a href="../Questões/Criar_Perguntas.php"><b>Questões</b></a>
-				<?php } ?>
             </div>
         </div>
 
@@ -119,7 +115,7 @@ if(!empty($_SESSION['id_usuario'])){
         <br>
         
 
-        <div class="inputBox">
+		<div class="inputBox">
 			<label><b>Matéria</b></label>
 		</div>
         <br>
@@ -162,7 +158,7 @@ if(!empty($_SESSION['id_usuario'])){
         
             
             
-            <form class="FormCriar_Perguntas" method="post" action="PHPProva.php">
+            <form method="post" action="PHPProva.php">
             <div class="Tema">
                 <div class="inputBox">
                 <label><b>Tema</b></label>
@@ -188,6 +184,7 @@ if(!empty($_SESSION['id_usuario'])){
 			<label><b>Ano</b></label>
 		</div>
         <br>
+        
         
         <div class="Ano">
 			<input type="radio" name="Ano" value="Primeiro" onclick="return myfun()" id="Primeiro" required>

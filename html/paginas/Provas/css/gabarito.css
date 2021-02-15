@@ -1,0 +1,95 @@
+@font-face {
+     font-family: 'FonteMuli';
+     src: url('../../../../css/fontes/muli-variablefont_wght-webfont.woff2') format('woff2'),
+          url('../../../../css/fontes/muli-variablefont_wght-webfont.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+ 
+ }
+ body
+ {
+     font-family: 'FonteMuli';
+     margin: 0 auto;
+     padding:  0%;
+ }
+
+a 
+{ 
+     padding: 3px 7px 3px 7px;
+     color: rgb(97, 97, 97);
+}
+.a 
+{ background-color: rgba(39, 193, 39, 0.764);
+     padding: 4px 8px 4px 8px;
+     color: white;
+}
+
+.b 
+{ 
+     position: absolute;
+     background-color: rgba(255, 255, 77, 0.826);
+     width: 30px;
+     padding: 5px 3px 4px 6px;
+     left: 400px;
+     top: 270px;
+     border: 1px solid gray;
+}
+
+.c 
+{
+     background-color: rgba(255, 57, 57, 0.778);
+     padding: 3px 7px 3px 7px;
+     color: white;
+}
+
+.q
+{ 
+     margin: 0 auto;
+     border: 1px solid gray;
+     width: 100px;
+     padding: 2px 26px 3px 0px;
+}
+
+.Cores
+{
+     margin: 0 auto;
+     display: table;
+     margin-bottom: 50px;
+}
+.Verde
+{
+     margin: 20px;
+     float: left;
+     width: 200px;
+     height: 38px;
+     padding-left: 10px;
+     padding-top: 18px;
+     border: 1px solid gray;
+     border-left: 6px solid green;
+     background-color: white;
+}
+.Amarelo
+{
+     margin: 20px;
+     float: left;
+     width: 200px;
+     height: 38px;
+     padding-left: 10px;
+     padding-top: 18px;
+     border: 1px solid gray;
+     border-left: 6px solid yellow;
+     background-color: white;
+}
+.Vermelho
+{
+     margin: 20px;
+     float: left;
+     width: 200px;
+     height: 38px;
+     padding-left: 10px;
+     padding-top: 18px;
+     border: 1px solid gray;
+     border-left: 6px solid red;
+     background-color: white;
+    
+}

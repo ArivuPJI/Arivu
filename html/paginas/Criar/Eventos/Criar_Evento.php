@@ -10,7 +10,7 @@ if(!empty($_SESSION['id_usuario'])){
 <html lang="pt_br">
 <head>
 <meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../../../../css/Criar.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../css/Teste.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -171,8 +171,8 @@ if(!empty($_SESSION['id_usuario'])){
 		</div>
 		<br>
         <div class="Restrição">
-			<input type="radio" name="Restricao" value="Todos" onclick="return myfun()" id="Todos" required>
-			<label for="Todos">Todos</label>
+			<input type="radio" name="Restricao" value="Público" onclick="return myfun()" id="Público" required>
+			<label for="Público">Público</label>
 			
 			<input type="radio" name="Restricao" value="Escola" onclick="return myfun()" class="form_radio" id="Escola" required>
 			<label for="Escola" class="form_label">Escola</label>

@@ -1,0 +1,30 @@
+.Perguntas
+{
+    margin-left: 130px;
+    width: 800px;
+    border: 1px gray solid;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.Pergunta
+{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+.a
+{
+    background-color: green;
+}
+
+.b {
+    background-color: red;
+}
+
+.TTT
+{
+    width: 400px;
+    background-color: blue;
+}

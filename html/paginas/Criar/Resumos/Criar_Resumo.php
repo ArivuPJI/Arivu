@@ -12,7 +12,7 @@ if(!empty($_SESSION['id_usuario'])){
 <html lang="pt_br">
 <head>
 <meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../../../../css/Criar.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../css/Teste.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -220,7 +220,7 @@ if(!empty($_SESSION['id_usuario'])){
 	<div class="LateralDireitaCriar">
 			
 	</div>
-	<script src="../ckeditor/ckeditor.js"></script>
+	<script src="../../ckeditor/ckeditor.js"></script>
         <script>
             CKEDITOR.replace('Conteudo');
         </script>

@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'FonteMuli';
+    src: url('./fontes/muli-variablefont_wght-webfont.woff2') format('woff2'),
+         url('./fontes/muli-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body
+{
+    font-family: 'FonteMuli';
+    margin: 0 auto;
+    padding:  0%;
+}
+
+    /* Aqui fica a navegação lateral e tudo dentro dela (Feed, Agenda, Criar, etc) */
+    .NavegaçãoLateral
+    {
+        position: fixed;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        top: 0;
+        width: 350px;
+        height: 880px;
+        background-color: #131432;
+    }
+    h1
+    {
+        color: white;
+        margin-left: 84px;
+        margin-top: 60px;
+        font-size: 25px;
+    }
+    .LogoLateral
+    {
+        margin-left: 25px;
+        margin-top: 49px;
+        position: absolute;
+    }
+
+        /* Mudando os links dentro da navegação lateral */
+        
+        .liLateral
+        {
+            position: fixed;
+            margin-top: 100px;
+        }
+            .liLateral li
+            {
+                list-style: none;
+                width: 145px;
+                margin-top: 5px;
+                padding-top: 20px;
+                padding-bottom: 16px;
+                padding-left: 90px;
+            }
+                .liLateral li a
+                {
+                    list-style: none;
+                    color: rgb(186, 186, 186);
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+                
+            .LateralSelecionado
+            {
+                background-color: #181936;
+                border-left: 5px solid white;
+                border-radius: 5px;
+            }
+            .LateralSelecionado b
+            {
+                font-size: 18px;
+                color: white;
+            }
+
+        /* ----------------------------------------------- */
+
+    /* --------------------------------------------------------- */
+
+    /* Parte do conteúdo principal da página */
+    .BodyConteudo
+    {
+        position: fixed;
+        top: 0;
+        left: 240px;
+        width: 1190px;
+        height: 885px;
+        background-color: white;
+        border-radius: 50px;
+        z-index: 2;
+    }
+            .NavegaçãoSuperior
+            {
+                position: fixed;
+                width: 1200px;
+                height: 100px;
+                margin-left: 50px;
+                margin-top: 0px;
+            }
+
+             /* Lateral Direita */
+             .LateralDireita
+             {
+                 position: fixed;
+                 width: 370px;
+                 height: 870px;
+                 background-color: #F6F9FE;
+                 right: 0px;
+                 border-radius: 50px;
+                 z-index: 0;
+                 top: 0px;
+             }
+
+                /* Estilização dos links superiores */
+                .aSuperior
+                {
+                    padding-top: 40px;
+                }
+
+                    .aSuperior a
+                    {
+                        color: #D1D0D0;
+                        display: inline;
+                        text-decoration: none;
+                        padding-right: 20px;
+                        padding-left: 20px;
+                        font-size: 20px;
+                        margin: 10px;
+                    }
+
+                .SuperiorSelecionado b
+                {
+                    color: #A986DE;
+                    border-bottom: 5px #A986DE solid;
+                    padding-bottom: 10px;
+                    padding-right: 20px;
+                    padding-left: 20px;
+                    font-size: 20px;
+                }
+                
+
+                /*Formulário da Criação de Eventos*/
+
+                .FormEventos
+                {
+                    margin-left: 50px;
+                    margin-top: 0px;
+                }
+
+
+
+
+
+                
+                .box .inputBox 
+            {
+                position: relative;
+            }
+
+            .inputBox p
+            {
+                color: gray;
+                margin-top: 0px;
+                margin-left: 10px;
+            }
+            .box .inputBox input
+            {
+                margin-left: 20px;
+                width: 250px;
+                font-size: 16px;
+                color: #131432;
+                margin-bottom: 30px;
+                border: none;
+                border-bottom: 1px solid rgba(70, 70, 70, 0.521);
+                outline: none;
+                background: transparent;
+            }
+            .inputBox label b
+            {
+                font-size: 19px;
+            }
+            .box .inputBox .Teste
+            {
+                margin-left: 85px;
+                margin-top: -22px;
+            }
+            .Localização
+            {
+                margin-left: 50px;
+            }
+
+            
+            .Publicações
+            {
+                overflow: auto;
+                width: 1135px;
+                height: 740px;
+                margin: 0 auto;
+                margin-top: 110px;
+                padding-left: 50px;
+                
+            }
+            ::-webkit-scrollbar
+            {
+                width: 10px;
+                
+            }
+        
+            ::-webkit-scrollbar-thumb
+            {
+                background-color: #131432;
+                border-radius: 50px;
+            }
+
+            .Descrição
+            {
+                width: 550px;
+                height: 100px;
+                align-items: top;
+            }
+
+
+
+        

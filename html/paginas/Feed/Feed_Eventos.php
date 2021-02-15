@@ -10,7 +10,7 @@ if(!empty($_SESSION['id_usuario'])){
 <html lang="pt_br">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../../../css/Feed.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/Feed1.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -23,8 +23,8 @@ if(!empty($_SESSION['id_usuario'])){
 			<li class="LateralSelecionado"><a href="Feed_Eventos.php"><b>Feed</b></a></li>
 			<li><a href="../Provas/Prova.php">Provas</a></li>
 			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-			<li><a href="">Agenda</a></li>
-			<li><a href="">Perfil</a></li>
+			<li><a href="../Agenda/Agenda.php">Agenda</a></li>
+			<li><a href="../Perfil/Perfil.php">Perfil</a></li>
 			<li><a href="../Redação/Redação.php">Redação</a></li>
 			<li><a href="../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
 			<?php } ?>

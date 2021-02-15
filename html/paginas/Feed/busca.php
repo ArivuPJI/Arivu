@@ -10,14 +10,16 @@
         $resultado_cursos = mysqli_query($conexao, $cursos);
 	
 	if(mysqli_num_rows($resultado_cursos) <= 0){
-		echo "Nenhum evento encontrado...";
+		echo "Nenhum resumo encontrado...";
 	}else{
                 //Evento
+                
                 while($rows = mysqli_fetch_assoc($resultado_cursos))
                 {
                 if ($rows['Topico'] == "Resumo")
                 {
                 ?>
+                
                 <div class="PublicaçõesResumo">
 					
                  <p class="DescriçãoResumo"><?php echo $rows['Descricao'];?><br></p>
@@ -25,6 +27,6 @@
                 <h2><?php echo $rows['Titulo'];?><br></h2></div>
 <?php  
         
-}}
-        }
-?>
+} ?><?php
+        } 
+}?>

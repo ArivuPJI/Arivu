@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'FonteMuli';
+    src: url('../../../../css/fontes/muli-variablefont_wght-webfont.woff2') format('woff2'),
+         url('../../../../css/fontes/muli-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body
+{
+    font-family: 'FonteMuli';
+    margin: 0 auto;
+    padding:  0%;
+}
+
+a{color:#09c;}
+a:hover{text-decoration:underline;}
+
+.button{
+    display:inline-block;
+    padding:8px 10px;
+    background:#333;
+    color:white;
+    font-weight:lighter;
+    font-size:16px;
+    border:0;
+    border-radius:3px;
+    outline:none;
+}
+.button:hover{background:black; cursor:pointer;}
+
+.button.azul{background:#069;}
+.button.azul:hover{background:#036;}
+
+#next, #prev{display:none;}
+#wrap-geral{
+    width:60%;
+    margin:0px auto;
+    margin-left: -150px;
+    position:fixed;
+}
+
+
+#prova-lista{
+    position:absolute;
+    top:0;
+    left: 20%;
+    width:150px;
+    padding:8px;
+
+}
+#prova-lista li{
+    float:left;
+    width:100px;
+    border-bottom:1px solid #ccc;
+    padding:8px 0;
+}
+#wrap-prova{
+    float:right;
+    width:70%;
+    height:400px;
+    min-height:400px;
+    position:relative;
+    margin-top: 50px;
+}
+#wrap-prova #next, #concluir{ float:right; }
+#wrap-prova h1{
+    font-size:22px;
+    color:#069;
+    font-weight:lighter;
+    margin-bottom:20px;
+    width:100%;
+    float:left;
+}
+#wrap-prova .begin, .sucesso{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:999;
+    background:rgba(255,255,255, 0.8);
+    display:none;
+}
+
+
+
+
+#wrap-prova .begin .button{
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-14px;
+    transform: translateY(-50%);
+}
+
+#wrap-prova .questao {
+    float:left;
+    width:100%;
+    padding:20px;
+    background:rgb(255, 255, 255);
+    margin-bottom: 10px;
+    
+    display: none;
+    border: 1px solid #333;
+}
+
+#wrap-prova .questao:first-child{
+    display:block;
+}
+#wrap-prova .questao h2{
+    font-size:18px;
+    color:#666;
+    float:left;
+    width:110%;
+    margin-bottom:15px;
+}
+#wrap-prova .questao p{
+    display:block;
+    margin-bottom:8px;
+    font-size:16px;
+    color:#333;
+}
+#wrap-prova .questao input[type=text]{
+    padding:8px;
+    width:100%;
+    border:1px solid #ccc;
+    outline:none;
+    font-size:17px;
+    color:#666;
+}
+#wrap-prova h1
+{
+    margin-left: 0px;
+}
+
+
+
+

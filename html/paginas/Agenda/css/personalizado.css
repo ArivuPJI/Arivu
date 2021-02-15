@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'FonteMuli';
+    src: url('../../../../css/fontes/muli-variablefont_wght-webfont.woff2') format('woff2'),
+         url('../../../../css/fontes/muli-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body
+{
+    font-family: 'FonteMuli';
+    margin: 0 auto;
+    padding:  0%;
+}
+
+    /* Aqui fica a navegação lateral e tudo dentro dela (Feed, Agenda, Criar, etc) */
+    .NavegaçãoLateral
+    {
+        position: fixed;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        top: 0%;
+        width: 350px;
+        height: 880px;
+        background-color: #131432;
+    }
+    h1
+    {
+        color: white;
+        margin-left: 84px;
+        margin-top: 60px;
+        font-size: 25px;
+    }
+    .LogoLateral
+    {
+        margin-left: 25px;
+        margin-top: 49px;
+        position: absolute;
+    }
+
+        /* Mudando os links dentro da navegação lateral */
+        
+        .liLateral
+        {
+            position: fixed;
+            margin-top: 100px;
+        }
+            .liLateral li
+            {
+                list-style: none;
+                width: 240px;
+                margin-top: 5px;
+                padding-top: 20px;
+                padding-bottom: 16px;
+                padding-left: 90px;
+            }
+                .liLateral li a
+                {
+                    list-style: none;
+                    color: rgb(186, 186, 186);
+                    text-decoration: none;
+                    font-size: 17px;
+                    
+                }
+                
+            .LateralSelecionado
+            {
+                background-color: #181936;
+                border-left: 5px solid white;
+                border-radius: 5px;
+            }
+            .LateralSelecionado b
+            {
+                font-size: 18px;
+                color: white;
+            }
+
+        /* ----------------------------------------------- */
+
+    /* --------------------------------------------------------- */
+
+    /* Parte do conteúdo principal da página */
+     
+    .BodyConteudo
+    {
+        display: flex;
+        position: fixed;
+        top: -3px;
+        left: 240px;
+        width: 1145px;
+        height: 885px;
+        background-color: white;
+        border-radius: 50px;
+    }
+
+            .NavegaçãoSuperior
+            {
+                position: fixed;
+                width: 1200px;
+                height: 100px;
+                margin-left: 50px;
+                margin-top: 0px;
+            }
+
+
+                /* Estilização dos links superiores */
+                .aSuperior
+                {
+                    padding-top: 40px;
+                }
+
+                    .aSuperior a
+                    {
+                        color: #D1D0D0;
+                        display: inline;
+                        text-decoration: none;
+                        padding-right: 20px;
+                        padding-left: 20px;
+                        font-size: 20px;
+                        margin: 10px;
+                    }
+
+                .SuperiorSelecionado b
+                {
+                    color: #A986DE;
+                    border-bottom: 5px #A986DE solid;
+                    padding-bottom: 10px;
+                    padding-right: 20px;
+                    padding-left: 20px;
+                    font-size: 20px;
+                }
+                
+                /*Pesquisa*/
+                .Pesquisa{
+                    position: absolute;
+                    right: 180px;
+                    top: 30px;
+                }
+
+                /* ------------------------------------- */
+
+                /* Pulicações */
+
+            .Publicações
+            {
+                overflow: auto;
+                width: 1190px;
+                height: 770px;
+                margin: 0 auto;
+                margin-top: 110px;
+            }
+            ::-webkit-scrollbar
+            {
+                width: 10px;
+                
+            }
+        
+            ::-webkit-scrollbar-thumb
+            {
+                background-color: #131432;
+                border-radius: 50px;
+            }
+        
+
+              
+    /* Lateral Direita */
+    .LateralDireita
+    {
+        position: fixed;
+        width: 370px;
+        height: 870px;
+        background-color: #F6F9FE;
+        right: 0px;
+        top: 0px;
+        border-radius: 50px;
+        z-index: 1;
+    }
+        .LateralDireita form
+        {
+            margin-left: 42px;
+        }
+           
+
+.Teste
+{
+    margin-top: 90px;
+    margin-right: 110px;
+}
+
+    #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .visevent{
+        display: block;
+    }
+    .formedit{
+        display: none;
+    }
+
+    .alert
+    {
+        margin: 0 auto;
+        width: 400px;
+    }

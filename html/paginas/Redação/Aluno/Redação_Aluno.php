@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include_once("../../../conexao.php");
+include_once("../../../../conexao.php");
 
 if(!empty($_SESSION['id_usuario'])){
 	$id_estudante = $_SESSION['id_usuario'];
@@ -10,7 +10,7 @@ if(!empty($_SESSION['id_usuario'])){
 <html lang="pt_br">
 <head>
 	<meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../../../css/Teste.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../css/Teste.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@ if(!empty($_SESSION['id_usuario'])){
     <div class="LateralDireitaCriar">
 	</div>
 	<div class="NavegaçãoLateral"> <!--Navegação Lateral -->
-	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+	<img class="LogoLateral" src="../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
 	<div class="liLateral">
 			<li><a href="../Feed/Feed_Eventos.php"><b>Feed</b></a></li>
 			<li><a href="../Provas/Prova.php">Provas</a></li>
@@ -39,15 +39,15 @@ if(!empty($_SESSION['id_usuario'])){
 	<div class="NavegaçãoSuperior">
 	<!-- Pesquisa -->
 		<div class="aSuperior">
-        <a class="SuperiorSelecionado" href="Feed_Eventos.php"><b>Redações</b></a>
-			<a href="Feed_Resumos"><b>Correções</b></a>
+        <a class="SuperiorSelecionado" href="Feed_Eventos.php"><b>Criar</b></a>
+			<a href="Minhas_Redações.php"><b>Redações</b></a>
 		</div>
     </div>
     <div class="Publicações">
         <div class="container">
-            <form class="FormEventos" method="post" action="PHPCriar_Resumo.php">
+        <form action="PHPRedação_Aluno.php" method="POST" class="FormEventos">
             <h2>Crie a sua redação...</h2><br><br>
-            <form>
+            
     <?php
     //Esse PHP pega o tema da tabela "temas_redação" e os coloca em forma decrescente. Dessa forma o código pega o último valor e conseguimos fazer uma
     //seleção de temas de forma randômica. A variável "$Limite" é esse último valor. Usamos esse mesmo sistema na criação de provas e no envio para o professor.
@@ -71,7 +71,8 @@ if(!empty($_SESSION['id_usuario'])){
 	while($rows_limite1 = mysqli_fetch_assoc($Limita1)) 
 	{
         $Tema = $rows_limite1['Tema'];
-        
+        $_SESSION['Tema'] = $rows_limite1['Tema'];
+
         ?>
         <!--Aqui o Html volta a aparecer e iremos fazer todo o corpo do site que vai ser enviado para o professor.-->
             <div class="box">
@@ -83,20 +84,24 @@ if(!empty($_SESSION['id_usuario'])){
                     <input type="text" name="Titulo" required><br><br>
                 </div>
 
-                <div class="inputBox">
+            <div class="inputBox">
             <label><b>Redação</b></label><br><br>
             <div class="Conteudo">
                 <textarea name="Conteudo" id="Conteudo" require></textarea>
             </div>
             </div>
-            </div>
             
             <br>
         </div>
+			<div class="btnFiltrar">
+			<input type="hidden" name="ação" value="Filtrar">
+			<input type="submit" value="Criar">
+			</div>
+			</div>
     </div>
     </form>
    
-        <script src="../Criar/ckeditor/ckeditor.js"></script>
+    <script src="../../ckeditor/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('Conteudo');
     </script>

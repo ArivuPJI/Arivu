@@ -1,0 +1,311 @@
+@font-face {
+    font-family: 'FonteMuli';
+    src: url('../../../../css/fontes/muli-variablefont_wght-webfont.woff2') format('woff2'),
+         url('../../../../css/fontes/muli-variablefont_wght-webfont.woff1') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body
+{
+    font-family: 'FonteMuli';
+    margin: 0 auto;
+    padding:  0%;
+}
+
+    /* Aqui fica a navegação lateral e tudo dentro dela (Feed, Agenda, Criar, etc) */
+    .NavegaçãoLateral
+    {
+        position: fixed;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        top: 0%;
+        width: 350px;
+        height: 880px;
+        background-color: #131432;
+    }
+    h1
+    {
+        color: white;
+        margin-left: 84px;
+        margin-top: 60px;
+        font-size: 25px;
+    }
+    .LogoLateral
+    {
+        margin-left: 25px;
+        margin-top: 49px;
+        position: absolute;
+    }
+
+        /* Mudando os links dentro da navegação lateral */
+        
+        .liLateral
+        {
+            position: fixed;
+            margin-top: 100px;
+        }
+            .liLateral li
+            {
+                list-style: none;
+                width: 145px;
+                margin-top: 5px;
+                padding-top: 20px;
+                padding-bottom: 16px;
+                padding-left: 90px;
+            }
+                .liLateral li a
+                {
+                    list-style: none;
+                    color: rgb(186, 186, 186);
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+                
+            .LateralSelecionado
+            {
+                background-color: #181936;
+                border-left: 5px solid white;
+                border-radius: 5px;
+            }
+            .LateralSelecionado b
+            {
+                font-size: 18px;
+                color: white;
+            }
+
+        /* ----------------------------------------------- */
+
+    /* --------------------------------------------------------- */
+
+    /* Parte do conteúdo principal da página */
+     
+    .BodyConteudo
+    {
+        display: flex;
+        position: fixed;
+        top: -3px;
+        left: 240px;
+        width: 1145px;
+        height: 885px;
+        background-color: white;
+        border-radius: 50px;
+        z-index: 2;
+    }
+
+            .NavegaçãoSuperior
+            {
+                position: fixed;
+                width: 1200px;
+                height: 100px;
+                margin-left: 50px;
+                margin-top: 0px;
+            }
+
+
+                /* Estilização dos links superiores */
+                .aSuperior
+                {
+                    padding-top: 40px;
+                }
+
+                    .aSuperior a
+                    {
+                        color: #D1D0D0;
+                        display: inline;
+                        text-decoration: none;
+                        padding-right: 20px;
+                        padding-left: 20px;
+                        font-size: 20px;
+                        margin: 10px;
+                    }
+
+                .SuperiorSelecionado b
+                {
+                    color: #A986DE;
+                    border-bottom: 5px #A986DE solid;
+                    padding-bottom: 10px;
+                    padding-right: 20px;
+                    padding-left: 20px;
+                    font-size: 20px;
+                }
+                
+                /*Pesquisa*/
+                .Pesquisa{
+                    position: absolute;
+                    right: 180px;
+                    top: 30px;
+                }
+
+                /* ------------------------------------- */
+
+                /* Pulicações */
+
+            .Publicações
+            {
+                overflow: auto;
+                width: 1140px;
+                height: 770px;
+                margin: 0 auto;
+                margin-top: 110px;
+
+            }
+            ::-webkit-scrollbar
+            {
+                width: 10px;
+            }
+        
+            ::-webkit-scrollbar-thumb
+            {
+                background-color: #131432;
+                border-radius: 50px;
+            }
+        
+
+
+            
+    /* Lateral Direita */
+    .LateralDireita
+    {
+        position: fixed;
+        width: 370px;
+        height: 870px;
+        background-color: #F6F9FE;
+        right: 0px;
+        border-radius: 50px;
+        z-index: 1;
+    }
+
+
+
+
+.PublicaçõesEvento
+{
+    position: relative;
+    height: 330px;
+    width: 900px;
+    background-color: #ffffff;  
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    box-shadow: 0px 0px 20px rgba(174, 174, 174, 0.514);
+    padding-top: 1px;
+}
+
+        .PublicaçõesEvento p
+        {
+            position: relative;
+            font-size: 15px;
+        }
+
+    .TituloEvento
+    {
+        width: 880px;
+        height: 50px;
+        background-color: #bebebe;
+        margin: 0 auto;
+        margin-top: 180px;
+    }
+
+        .TituloEvento h2
+        {
+            margin: 20px;
+            padding-top: 10px;
+            color: white;
+        }
+        
+        #DividirPublicação
+        {
+            width: 900px;
+            height: auto;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: -30px;
+            padding: 10px;
+        }
+        .Teste
+        {
+            margin: 0 auto;
+            width: 290px;
+            height: 80px;
+            float: left;
+            border-top: 2px solid #D1D0D0;
+            border-left: 1px solid #D1D0D0;
+            border-right: 1px solid #D1D0D0;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .Teste p
+        {
+            top: 25px;
+            margin-top: -15px
+        }
+        .Teste p b
+        {
+            margin-top: -10px;
+            font-size: 20px;
+        }
+        hr
+        {
+            margin-top: 18px;
+        }
+
+
+        
+                /*Tela de Click Resumo*/
+                .Resumo_Click
+                {
+                    list-style: none;
+                    text-decoration: none;
+                    color: rgb(31, 31, 31);
+                }
+                
+                .Resumo_Click_Corpo
+                {
+                    margin: 0 auto;
+                    position: relative;
+                    width: 900px;
+                    background-color: #ffffff;
+                    text-align: center;
+                    box-shadow: 0px 0px 15px #d1d1d195;
+                    padding: 1px;
+                    margin-top: 50px;
+                }
+        
+                .Resumo_Click_Conteudo
+                {
+                        margin: 0 auto;
+                        position: relative;
+                        width: 860px;
+                        background-color:  #d1d1d168;
+                        text-align: left;
+                        padding: 0px 5px 0px 5px;
+                }
+
+                .Título
+                {
+                    margin-left: 50px;
+                    border-bottom: #d1d1d168 1px solid;
+                    width: 800px;
+                    height: 40px;
+                }
+
+                .DescriçãoEvento {  
+                        color: rgb(53, 53, 53);
+                        text-decoration: none;
+                        list-style: none;
+                        overflow: hidden; /* remove o estouro do elemento */
+                        display: -webkit-box;
+                        width: 860px;
+        
+
+                        height: 143px;
+                        position: absolute;
+                        background-color: rgb(238, 238, 238);
+                        margin: 10px;
+
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        padding-bottom: 10px;
+               }  
+

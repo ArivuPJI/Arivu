@@ -10,7 +10,7 @@ if(!empty($_SESSION['id_usuario'])){
 <html lang="pt_br">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../../../css/Feed1.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/Feed2.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -78,7 +78,7 @@ if(!empty($_SESSION['id_usuario'])){
 		
 		</ul>
 	<?php
-		$Query_Eventos = "SELECT Titulo, Materia, Descricao, Data, Horario, Tema, Topico, Conteudo, Id_Quem_Postou, Restricao FROM feed where Topico = 'Resumo'"; //Pegando dados do evento do banco
+		$Query_Eventos = "SELECT Id_Feed, Titulo, Materia, Descricao, Data, Horario, Tema, Topico, Conteudo, Id_Quem_Postou, Restricao FROM feed where Topico = 'Resumo'"; //Pegando dados do evento do banco
 		$Eventos = mysqli_query($conexao, $Query_Eventos) or die (mysqli_error($conexao));
 		while($rows_eventos = mysqli_fetch_assoc($Eventos))
 			{ 
@@ -89,7 +89,9 @@ if(!empty($_SESSION['id_usuario'])){
 					?>
 					<div class="PublicaçõesResumo">
 					
-						<p class="DescriçãoResumo"><?php echo $rows_eventos['Descricao'];?><br></p>
+					<div class="DescriçãoResumo">
+						<a href="Info_Resumos.php?codigo=<?php echo $rows_eventos['Id_Feed']; ?>"><?php echo $rows_eventos['Descricao'];?><br></a>
+						</div>
 						<div  class="TituloResumo">
 						<h2><?php echo $rows_eventos['Titulo'];?><br></h2></div>
 						
@@ -106,7 +108,7 @@ if(!empty($_SESSION['id_usuario'])){
 					{
 					?> 		
 						<div class="PublicaçõesResumo">
-                            <p class="DescriçãoResumo"><?php echo $rows_eventos['Descricao'];?><br></p>
+                            <a class="DescriçãoResumo" href="Info_Resumos.php?codigo=<?php echo $rows_redações['Id_Redação']; ?>"><?php echo $rows_eventos['Descricao'];?><br></a>
                             <div  class="TituloResumo">
                                 <h2><?php echo $rows_eventos['Titulo'];?><br></h2></div>
                                 <br><br>

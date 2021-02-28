@@ -1,10 +1,17 @@
+#Teste
+{
+    position:initial ;
+    left: 1000px;
+}
+
 .Perguntas
 {
     margin-left: 130px;
     width: 800px;
     border: 1px gray solid;
-    margin-top: 50px;
+    margin-top: 40px;
     padding: 10px;
+    margin-bottom: 50px;
 }
 
 .Pergunta
@@ -28,3 +35,4 @@
     width: 400px;
     background-color: blue;
 }
+

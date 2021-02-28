@@ -13,7 +13,7 @@ include_once("../../../../conexao.php");
 
     if(!empty($Titulo))
     {
-        $sql = "Insert into feed (Titulo, Tema, Materia ,  Restricao, Descricao, Topico, Id_Quem_Postou) values ('$Titulo', '$Tema', '$Materia', '$Restricao', '$Descricao', 'Resumo', '$Id_Quem_Postou')";
+        $sql = "Insert into feed (Titulo, Tema, Materia ,  Restricao, Descricao, Topico, Id_Quem_Postou, Conteudo) values ('$Titulo', '$Tema', '$Materia', '$Restricao', '$Descricao', 'Resumo', '$Id_Quem_Postou', '$Conteudo')";
         $execute = mysqli_query($conexao, $sql);
 
         

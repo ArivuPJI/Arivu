@@ -17,7 +17,7 @@ if(!empty($_SESSION['id_usuario'])){
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../../../../css/Feed1.css"/>
-	<link rel="stylesheet" type="text/css" href="Criar_Provas.css"/>
+	<link rel="stylesheet" type="text/css" href="Criar_Prova.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -104,15 +104,21 @@ $Truncate_Execute = mysqli_query($conexao, $Truncate);
 		$opcao = $rows_limite3['opcao'];
 		$alternativa = $rows_limite3['correta'];
 		echo "(".$alternativa.") " .$opcao. "<br>";
-	} ?>		</div> <?php
+	}}  ?>	</div> <?php
 	
-}
+	
+
+	$Query_Teste4 = "SELECT * from opcoes where id_questao = '$id'"; //Teste
+	$Teste4 = mysqli_query($conexao, $Query_Teste4) or die (mysqli_error($conexao));
+	while($rows_limite4 = mysqli_fetch_assoc($Teste4)) 
+	{ 
+	$correta = $rows_limite4['correta'];
+	$correta_1 = $rows_limite4['correta_1'];
 	}
+}
+?>
 
 
-	?>
-
-    </div>
 	</div>
 	<div class="LateralDireita">
 	<form method="Post" action="">
@@ -121,20 +127,8 @@ $Truncate_Execute = mysqli_query($conexao, $Truncate);
 				<b><p>GABARITO</p></b>
 				<p class="Selecionar">Você pode imprimir o gabarito</p>
 				<!-- Radios Button -->
-				</div> <?php
-	$Query_Teste4 = "SELECT * from opcoes where id_questao = '$id'"; //Teste
-	$Teste4 = mysqli_query($conexao, $Query_Teste4) or die (mysqli_error($conexao));
-	while($rows_limite4 = mysqli_fetch_assoc($Teste4)) 
-	{ 
-	$correta = $rows_limite4['correta'];
-	$correta_1 = $rows_limite4['correta_1'];
-?>
-
-	<?php
-	if($rows_limite4['correta_1'] == $rows_limite4['correta']){
-	?><a class='a'><?php echo $correta_1 ?></a><?php
-	}else{
-	?><a><?php echo $correta ?></a> <?php } 	} ?>
+				</div> 
+	
 			</div>
 		</form>
 

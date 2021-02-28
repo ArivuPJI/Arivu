@@ -24,7 +24,7 @@ if($btnLogin){
                 //Talvez precise pegar mais dados daqui. 
                 //Caso precise de mais algum dado adicione mais uma váriavel global e insira no código SQL acima.
 				$_SESSION['id_usuario'] = $row_usuario['id_usuario'];
-                $_SESSION['Sexo'] = $row_usuario['Sexo'];
+                $_SESSION['Nome_Completo'] = $row_usuario['Nome_Completo'];
 				$_SESSION['Email_academico'] = $row_usuario['Email_academico'];
 				$_SESSION['Email_pessoal'] = $row_usuario['Email_pessoal'];
 				$_SESSION['Restricao'] = $row_usuario['Restricao'];

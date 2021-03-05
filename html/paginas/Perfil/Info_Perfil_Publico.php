@@ -1,9 +1,6 @@
-
-
-
 <?php 
 session_start();
-include_once("../../../../conexao.php");
+include_once("../../../conexao.php");
 
 if(!empty($_SESSION['id_usuario'])){
 	$id_estudante = $_SESSION['id_usuario'];
@@ -13,40 +10,36 @@ if(!empty($_SESSION['id_usuario'])){
 <html lang="pt_br">
 <head>
 	<meta charset="utf-8">
-
-    <link rel="stylesheet" type="text/css" href="../Professor/Redação.css">
+	<link rel="stylesheet" type="text/css" href="../Redação/Aluno/Redação.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
 	<title>Feed Eventos</title>
 </head>
 <body>
-    <div class="LateralDireitaCriar">
-	</div>
 	<div class="NavegaçãoLateral"> <!--Navegação Lateral -->
-	<img class="LogoLateral" src="../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
 	<div class="liLateral">
-			<li><a href="../../Feed/Feed_Eventos.php">Feed</a></li>
-			<li><a href="../../Provas/Prova.php">Provas</a></li>
+			<li><a href="Feed_Eventos.php">Feed</a></li>
+			<li><a href="../Provas/Prova.php">Provas</a></li>
 			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-			<li><a href="../../Agenda/Agenda.php">Agenda</a></li>
-			<li><a href="../../Perfil/Perfil.php">Perfil</a></li>
-            <li class="LateralSelecionado"><a href=""><b>Redação</b></a></li>
-			<li><a href="../../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
+			<li><a href="../Agenda/Agenda.php">Agenda</a></li>
+			<li  class="LateralSelecionado"><a href=""><b>Perfil</b></a></li>
+			<li><a href="../Redação/Aluno/Redação_Aluno.php">Redação</a></li>
+			<li><a href="../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
 			<?php } ?>
 			<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
-			
 		</div>
-    </div>
+		</div>
     
-    <div class="BodyConteudo"> <!-- Corpo, onde fica todo  conteudo do site -->
+		<div class="BodyConteudo"> <!-- Corpo, onde fica todo  conteudo do site -->
 	<div class="NavegaçãoSuperior">
 	<!-- Pesquisa -->
 		<div class="aSuperior">
-        <a href="Redação_Aluno.php"><b>Criar</b></a>
-			<a class="SuperiorSelecionado" href="Feed_Resumos"><b>Redações</b></a>
+			<a class="SuperiorSelecionado" href="Feed_Eventos.php"><b>Público</b></a>
+			<a href="Perfil_Privado.php"><b>Privado</b></a>
 		</div>
-    </div>
+	</div>
     <div class="Publicações">
 
     <?php 
@@ -54,21 +47,19 @@ if(!empty($_SESSION['id_usuario'])){
     
         $Id = $_GET['codigo'];
 
-        $Tabela_Redações = "SELECT * from redacoes where Id_Redação = '$Id'"; //Teste
+        $Tabela_Redações = "SELECT * from feed where Id_Feed = '$Id'"; //Teste
         $Query_Redações = mysqli_query($conexao, $Tabela_Redações) or die (mysqli_error($conexao));
     
         
         while($rows_redações = mysqli_fetch_assoc($Query_Redações)) 
-        {
-			
-                ?>
+        { ?>
 
 <div class="Resumo_Click_Corpo">
 	<div class="Título">
-        <h2><?php echo $rows_redações['Título']; ?></h2>
+        <h2><?php echo $rows_redações['Titulo']; ?></h2>
 	</div>
         <div class="Resumo_Click_Conteudo">
-            <p><?php echo $rows_redações['Redação']; ?></p>
+            <p><?php echo $rows_redações['Conteudo']; ?></p>
         </div>
 	</div>
 				<?php
@@ -86,7 +77,6 @@ if(!empty($_SESSION['id_usuario'])){
 		$Tabela_Redações = "SELECT * from correcao where id_redacao = '$Id' limit 4"; //Teste
         $Query_Redações = mysqli_query($conexao, $Tabela_Redações) or die (mysqli_error($conexao));
 		
-		$Numero = 1;
 		
         while($rows_redações = mysqli_fetch_assoc($Query_Redações)) 
         { 
@@ -97,12 +87,7 @@ if(!empty($_SESSION['id_usuario'])){
 			<div class="Correções_Pequenas">
 			<p><?php echo $rows_redações['titulo']; ?></p>
 		 	</div>
-		<?php $Numero++; }?>
-		</div>
-		
-		<div class="btnFiltrar">
-		<button><a href="Info_Correções.php?codigo=<?php echo $id_redacao;?>">Ver mais</a></button>
-		</div>
+			 <?php } ?>
     </body>
 
 <?php

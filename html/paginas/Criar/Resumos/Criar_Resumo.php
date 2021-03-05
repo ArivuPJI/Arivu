@@ -25,8 +25,9 @@ if(!empty($_SESSION['id_usuario'])){
 				<li><a href="../../Feed/Feed_Eventos.php">Feed</a></li>
 				<li><a href="../../Provas/Prova.php">Provas</a></li>
 				<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-				<li><a href="">Agenda</a></li>
-				<li><a href="">Perfil</a></li>
+				<li><a href="../../Agenda/Agenda.php">Agenda</a></li>
+				<li><a href="../../Perfil/Perfil.php">Perfil</a></li>
+				<li><a href="../../Redação/Aluno/Redação_Aluno.php">Redação</a></li>
 				<li class="LateralSelecionado"><a href=""><b>Criar</b></a></li>
 				<?php } ?>
 				<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
@@ -78,7 +79,7 @@ if(!empty($_SESSION['id_usuario'])){
 				<a class="SuperiorSelecionado" href="Criar_Resumo.php"><b>Resumos</b></a>
 				<?php if($_SESSION['Restricao'] == "Professor"){?>
 				<a href="../Eventos/Criar_Evento.php"><b>Eventos</b></a>
-                <a href=""><b>Provas</b></a>
+                <a href="../Provas/Prova.php"><b>Provas</b></a>
 				<a href="Criar_Perguntas.php"><b>Questões</b></a>
 				<?php } ?>
             </div>
@@ -150,14 +151,6 @@ if(!empty($_SESSION['id_usuario'])){
 			<label for="Privado" class="form_label">Privado</label>
 				
 		</div>
-		
-
-			<div class="inputBox">
-			<label><b>Descrição</b></label><br><br>
-			<textarea class="Descrição"  type="text" name="Descricao" id="Descricao" required></textarea>
-            </div>
-            <br><br><br>
-            
 
             <div class="inputBox">
             <label><b>Conteúdo</b></label><br><br>

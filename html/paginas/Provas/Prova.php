@@ -21,10 +21,11 @@ if(!empty($_SESSION['id_usuario'])){
 		<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Arivu</h1>
 		<div class="liLateral">
 				<li><a href="../Feed/Feed_Eventos.php">Feed</a></li>
-				<li class="LateralSelecionado"><a href=""><b>Provas</b></a></li>
+				<li class="LateralSelecionado"><a href="../Provas/Prova.php"><b>Provas</b></a></li>
 				<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-				<li><a href="">Agenda</a></li>
-				<li><a href="">Perfil</a></li>
+				<li><a href="../Agenda/Agenda.php">Agenda</a></li>
+				<li><a href="../Perfil/Perfil.php">Perfil</a></li>
+				<li><a href="../Redação/Professor/Minhas_Redações.php">Redação</a></li>
 				<li><a href="../Criar/Criar_Evento.php">Criar</a></li>
 				<?php } ?>
 				<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
@@ -290,7 +291,8 @@ if(!empty($_SESSION['id_usuario'])){
 		
        
 </form>
-
+	</div>
+	
 	<div class="LateralDireita">
 			
 	</div>

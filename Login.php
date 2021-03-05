@@ -9,7 +9,7 @@ session_start();
 	<head>
 		<meta charset="utf-8">
         <title>Login</title>
-        <link rel="stylesheet" type="text/css" href="./css/Login.css"/>
+        <link rel="stylesheet" type="text/css" href="../Site do 0/css/Login.css"/>
 	</head>
 	<body>
         <div class="BodyLogin"> <!-- Div para poder colocar a sombra no fundo -->

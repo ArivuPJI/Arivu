@@ -17,16 +17,16 @@
                 while($rows = mysqli_fetch_assoc($resultado_cursos))
                 {
                 if ($rows['Topico'] == "Resumo")
-                {
-                ?>
-                
+		{ ?>	
                 <div class="PublicaçõesResumo">
-					
-                 <p class="DescriçãoResumo"><?php echo $rows['Descricao'];?><br></p>
-                <div  class="TituloResumo">
-                <h2><?php echo $rows['Titulo'];?><br></h2></div>
-<?php  
-        
-} ?><?php
+                            <a class="DescriçãoResumo" href="Info_Resumos.php?codigo=<?php echo $rows['Id_Feed']; ?>"><?php echo $rows['Conteudo'];?><br></a>
+                            <div  class="TituloResumo">
+                                <h2><?php echo $rows['Titulo'];?><br></h2></div>
+                
+                                
+                            </div>
+                            <?php
+          } ?><?php
         } 
-}?>
+}
+?>

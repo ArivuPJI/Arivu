@@ -1,10 +1,11 @@
+
 <?php
 session_start();
 include_once '../../../../conexao.php';
 include_once 'conexao.php';
 
 $titulos = $_POST["titulo"];
-$Redação = $_POST["Conteudo"];
+$Redação = $_POST['Conteudo'];
 $Id_Professor = $_SESSION['Id_Professor'];
 $Id_Redação = $_SESSION['Id_Redação'];
 
@@ -27,11 +28,6 @@ foreach ($titulos as $titulo) {
 
 
 
-if ($cont_insert) {
-    echo "<p style='color:green;'>Correção realizada com Suceso</p>"; 
-} else {
-    echo "<p style='color:red;'>Erro ao corrigir</p>";
-}
 
 
 $sql = "UPDATE correcao SET id_redacao = '$Id_Redação' WHERE id_redacao = 0";
@@ -44,7 +40,7 @@ $sql = "UPDATE correcao SET id_redacao = '$Id_Redação' WHERE id_redacao = 0";
 
 $sql = "UPDATE redacoes SET Correção = '$Redação', Estado ='Sim' WHERE Id_Redação = '$Id_Redação'";
 if ($conexao->query($sql) === TRUE) {
-    echo "Record updated successfully";
+    header("Location: Correções.php");
   } else {
     echo "Error updating record: " . $conexao->error;
   }

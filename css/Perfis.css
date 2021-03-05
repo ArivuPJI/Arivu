@@ -171,7 +171,7 @@ body
                     background-color: #ffffff;  
                     margin: 0 auto;
                     margin-top: 50px;
-                    margin-bottom: 130px;
+                    margin-bottom: 70px;
                     box-shadow: 0px 0px 20px rgba(174, 174, 174, 0.514);
                     padding-top: 1px;
                 }
@@ -417,21 +417,32 @@ body
         .PublicaçõesResumo
         {
             margin: 0 auto;
-            height: 323px;
+            height: 278px;
             width: 800px;
             background-color: white;
             box-shadow: 0px 0px 20px rgba(164, 164, 164, 0.333);
-            margin-top: 40px;
-            margin-bottom: 100px;
+            margin-top: 10px;
+            margin-bottom: 70px;
             padding-top: 14px;
         }
         .DescriçãoResumo
         {
-            margin: 0 auto;
-            height: 230px;
-            width: 748px;
-            background-color: #d7d7d771;
-            padding: 14px;
+            color: rgb(53, 53, 53);
+            text-decoration: none;
+            list-style: none;
+            overflow: hidden; /* remove o estouro do elemento */
+            display: -webkit-box;
+            width: 758px;
+
+
+            height: 200px;
+            background-color: rgb(238, 238, 238);
+            margin: 10px;
+            margin-top: -1px;
+
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
         }
         .TituloResumo
         {
@@ -458,7 +469,7 @@ body
         {
             text-align: center;
             border-bottom: 1px solid rgb(180, 180, 180);
-            margin-bottom: 100px;
+            margin-bottom: 40px;
         }
         #Destacado
         {

@@ -5,7 +5,6 @@ include_once("../../../../conexao.php");
     $Tema = $_POST['Tema'];
     $Materia = $_POST['Materia'];
     $Restricao = $_POST['Restricao'];
-    $Descricao = $_POST['Descricao'];
     $Conteudo = $_POST['Conteudo'];
     $Id_Quem_Postou = $_SESSION['id_usuario'];
     
@@ -13,7 +12,7 @@ include_once("../../../../conexao.php");
 
     if(!empty($Titulo))
     {
-        $sql = "Insert into feed (Titulo, Tema, Materia ,  Restricao, Descricao, Topico, Id_Quem_Postou, Conteudo) values ('$Titulo', '$Tema', '$Materia', '$Restricao', '$Descricao', 'Resumo', '$Id_Quem_Postou', '$Conteudo')";
+        $sql = "Insert into feed (Titulo, Tema, Materia ,  Restricao, Topico, Id_Quem_Postou, Conteudo) values ('$Titulo', '$Tema', '$Materia', '$Restricao', 'Resumo', '$Id_Quem_Postou', '$Conteudo')";
         $execute = mysqli_query($conexao, $sql);
 
         

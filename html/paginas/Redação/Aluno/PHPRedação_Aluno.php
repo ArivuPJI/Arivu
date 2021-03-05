@@ -44,7 +44,7 @@ include_once("../../../../conexao.php");
         
         $sql = "UPDATE redacoes SET Id_Professor = '$Id_Professor', Nome_Professor = '$Nome_Professor' WHERE Id_Professor = 0";
         if ($conexao->query($sql) === TRUE) {
-            echo "Record updated successfully";
+            header("Location: Minhas_Redações.php");
           } else {
             echo "Error updating record: " . $conexao->error;
           }

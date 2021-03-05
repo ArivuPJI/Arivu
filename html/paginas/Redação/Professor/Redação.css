@@ -150,6 +150,11 @@ body
                 margin-top: 110px;
 
             }
+            #h2
+            {
+                padding-left: 120px;
+            }
+
             ::-webkit-scrollbar
             {
                 width: 10px;
@@ -176,6 +181,7 @@ body
         z-index: 1;
     }
 
+    
 
 
 
@@ -207,13 +213,14 @@ body
         margin-top: 180px;
     }
 
+    
         .TituloEvento h2
         {
             margin: 20px;
             padding-top: 10px;
             color: white;
         }
-        
+
         #DividirPublicação
         {
             width: 900px;
@@ -410,3 +417,109 @@ body
                    float: right;
                    margin-right: 130px;
                }
+
+
+               /* Correções */
+               .CorpoFiltros
+               {
+                   position: absolute;
+                   width: 280px;
+                   height: 402px;
+                   background-color: transparent;
+                   margin-top: 70px;
+                   margin-left: 32px;
+                   border-radius: 10px;
+                   
+               }
+               .LateralDireita form
+               {
+                   margin-left: 42px;
+               }
+
+
+               .Correções_Pequenas
+               {
+                   width: 270px;
+                   height: 100px;
+
+                   padding-left: 10px;
+                   margin-bottom: 25px;
+                   background-color: white;
+                   margin-top: -35px;
+
+                   border-radius: 20px;
+                   border-top: 20px solid rgb(100, 174, 252);
+                   border-left: 1px solid gray;
+                   border-bottom: 1px solid gray;
+                   border-right: 1px solid gray;
+
+                   overflow: hidden; /* remove o estouro do elemento */
+                   display: -webkit-box;
+               }
+
+               .Correções_Grandes
+               {
+                   margin: 0 auto;
+                   margin-top: -35px;
+                   margin-bottom: 55px;
+                   padding-left: 10px;
+
+                   width: 750px;
+
+
+                   background-color: white;
+
+                   border-radius: 10px;
+                   border-top: 20px solid rgb(100, 174, 252);
+                   border-left: 1px solid gray;
+                   border-bottom: 1px solid gray;
+                   border-right: 1px solid gray;
+
+                   overflow: hidden; /* remove o estouro do elemento */
+                   display: -webkit-box;
+               }
+
+               .Corpo_Numero{
+                   width: 40px;
+                   margin: 0 auto;
+                   margin-top: 30px;
+               }
+
+               button a
+               {
+                   text-decoration: none;
+                  color: rgb(75, 75, 75);
+               }
+               .btnFiltrar button
+               {
+                   margin-left: 62%;
+                   width: 100px;
+                   border: none;
+                   outline: none;
+
+                   color: gray;
+                   background-color: white;
+                   padding: 8px 20px;
+                   cursor: pointer;
+                   border-radius: 5px;
+                   border-left: 5px solid #01cc65;
+
+                   box-shadow: 0px 0px 10px rgba(188, 188, 188, 0.444);
+               }
+               .btnFiltrar button:hover
+               {
+                margin-left: 62%;
+                width: 100px;
+
+                border: none;
+                outline: none;
+
+                color: gray;
+                background-color: white;
+                padding: 8px 20px;
+                cursor: pointer;
+                border-radius: 5px;
+                border-left: 7px solid #01cc65;
+                box-shadow: 0px 0px 10px rgba(188, 188, 188, 0.444);
+               }
+               

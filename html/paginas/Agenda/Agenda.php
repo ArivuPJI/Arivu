@@ -34,8 +34,8 @@ session_start();
 			<li><a href="../Provas/Prova.php">Provas</a></li>
 			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
 			<li class="LateralSelecionado"><a href=""><b>Agenda</b></a></li>
-			<li><a href="">Perfil</a></li>
-			<li><a href="../Redação/Redação.php">Redação</a></li>
+			<li><a href="../Perfil/Perfil.php">Perfil</a></li>
+			<li><a href="../Redação/Professor/Minhas_Redações.php">Redação</a></li>
 			<li><a href="../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
 			<?php } ?>
 			<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"?></li>

@@ -10,7 +10,7 @@ if(!empty($_SESSION['id_usuario'])){
 <html lang="pt_br">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../../../css/Feed1.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/Feeds.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -97,7 +97,11 @@ if(!empty($_SESSION['id_usuario'])){
 							</div>
 							<div class="Teste">
 							<p><b>Data</b></p>
-								<p><?php echo $rows_eventos['Data'];?></p>
+								
+								<?php 
+								
+								$data = $rows_eventos['Data']; ?>
+								<p><?php echo date("d-m-Y", strtotime($data))."<br>";?></p>
 							</div>
 							<div class="Teste">
 							<p><b>Horário</b></p>

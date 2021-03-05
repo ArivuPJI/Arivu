@@ -11,7 +11,7 @@ if(!empty($_SESSION['id_usuario'])){
 <head>
 	<meta charset="utf-8">
 
-    <link rel="stylesheet" type="text/css" href="Redações.css">
+    <link rel="stylesheet" type="text/css" href="Redação.css">
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -23,15 +23,15 @@ if(!empty($_SESSION['id_usuario'])){
 	<div class="NavegaçãoLateral"> <!--Navegação Lateral -->
 	<img class="LogoLateral" src="../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
 	<div class="liLateral">
-			<li><a href="../Feed/Feed_Eventos.php"><b>Feed</b></a></li>
-			<li><a href="../Provas/Prova.php">Provas</a></li>
+			<li><a href="../../Feed/Feed_Eventos.php">Feed</a></li>
+			<li><a href="../../Provas/Prova.php">Provas</a></li>
 			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-			<li><a href="">Agenda</a></li>
-			<li><a href="">Perfil</a></li>
-            <li class="LateralSelecionado"><a href="">Redação</a></li>
-			<li><a href="../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
+			<li><a href="../../Agenda/Agenda.php">Agenda</a></li>
+			<li><a href="../../Perfil/Perfil.php">Perfil</a></li>
+            <li class="LateralSelecionado"><a href=""><b>Redação</b></a></li>
+			<li><a href="../../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
 			<?php } ?>
-			<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
+			<li><?php echo "<a href='../../../login/Sair.php'>Sair</a>"; ?></li>
 			
 		</div>
     </div>
@@ -45,6 +45,7 @@ if(!empty($_SESSION['id_usuario'])){
 		</div>
     </div>
     <div class="Publicações">
+	<h2 id="h2">Redações para corrigir...</h2>
 
     <?php 
         $Tabela_Redações = "SELECT * from redacoes where Id_Professor = '$id_estudante' && Estado = 'Não'"; //Teste

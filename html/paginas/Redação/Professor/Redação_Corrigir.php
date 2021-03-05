@@ -10,7 +10,7 @@ if(!empty($_SESSION['id_usuario'])){
     <head>  
         <meta charset="utf-8">
         <title>Arivu</title>
-        <link rel="stylesheet" type="text/css" href="Redações.css">
+        <link rel="stylesheet" type="text/css" href="Redação.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <style>
             .form-group{
@@ -59,14 +59,15 @@ if(!empty($_SESSION['id_usuario'])){
         $_SESSION['Id_Professor'] = $rows_redações['Id_Professor'];
         ?>
 
+
         <span id="msg"></span>
-        <form id="add-aula" method="POST">
-        <div class="inputBox">
+        <form id="add-aula" method="POST" action="insert.php">
+
 
         <div class="Conteudo">
-            <textarea name="Conteudo" id="Conteudo" require><?php echo $rows_redações['Redação']; ?></textarea>
+            <textarea name="Conteudo" id="Conteudo" require><?php echo $rows_redações['Redação'];?></textarea>
         </div>
-        </div>
+
 
 <?php } ?>
 <div class="Correções">
@@ -79,10 +80,18 @@ if(!empty($_SESSION['id_usuario'])){
                 </div>
             </div>
             <div class="form-group">
-                <input type="button" name="CadAulas" id="CadAulas" value="Enviar">
+            <div class="btnFiltrar">
+			<input type="submit" value="Enviar" id="CadAulas">
+			</div>
             </div>
             </div>
-        </form>
+        
+
+
+            
+
+</form>
+
 
         <script>
             $(document).ready(function () {

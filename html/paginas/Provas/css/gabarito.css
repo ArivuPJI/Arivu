@@ -24,15 +24,25 @@ a
      color: white;
 }
 
+.teste 
+{
+     width: 500px;
+     margin: 0 auto;
+     top: 270px;
+     position: relative;
+     z-index: 1001;
+}
+
 .b 
 { 
      position: absolute;
      background-color: rgba(255, 255, 77, 0.826);
      width: 30px;
      padding: 5px 3px 4px 6px;
-     left: 400px;
+     left: 650px;
      top: 270px;
      border: 1px solid gray;
+     z-index: 999;
 }
 
 .c 
@@ -44,10 +54,10 @@ a
 
 .q
 { 
-     margin: 0 auto;
      border: 1px solid gray;
      width: 100px;
      padding: 2px 26px 3px 0px;
+     margin: 0 auto;
 }
 
 .Cores
@@ -93,3 +103,7 @@ a
      background-color: white;
     
 }
+
+
+
+

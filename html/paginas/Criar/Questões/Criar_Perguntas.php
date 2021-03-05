@@ -10,7 +10,7 @@ if(!empty($_SESSION['id_usuario'])){
 <html lang="pt_br">
 <head>
 <meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../../../../css/Criar.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../css/Teste.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -21,10 +21,10 @@ if(!empty($_SESSION['id_usuario'])){
 		<img class="LogoLateral" src="../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
 		<div class="liLateral">
 				<li><a href="../../Feed/Feed_Eventos.php">Feed</a></li>
-				<li><a href="">Provas</a></li>
+				<li><a href="../../Provas/Prova.php">Provas</a></li>
 				<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-				<li><a href="">Agenda</a></li>
-				<li><a href="">Perfil</a></li>
+				<li><a href="../../Agenda/Agenda.php">Agenda</a></li>
+				<li><a href="../../Perfil/Perfil.php">Perfil</a></li>
 				<li class="LateralSelecionado"><a href="../Criar/Criar_Evento.php"><b>Criar</b></a></li>
 				<?php } ?>
 				<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
@@ -102,10 +102,10 @@ if(!empty($_SESSION['id_usuario'])){
 	<div class="BodyConteudo"> <!-- Corpo, onde fica todo  conteudo do site -->
         <div class="NavegaçãoSuperior"> <!-- Parte superior  -->
             <div class="aSuperior"> 
-				<a href="Criar_Resumo.php"><b>Resumos</b></a>
+				<a href="../Resumos/Criar_Resumo.php"><b>Resumos</b></a>
 				<?php if($_SESSION['Restricao'] == "Professor"){?>
-				<a href="Criar_Evento.php"><b>Eventos</b></a>
-                <a href="Criar_Prova.php"><b>Provas</b></a>
+				<a href="../Eventos/Criar_Evento.php"><b>Eventos</b></a>
+                <a href="../Provas/Criar_Prova.php"><b>Provas</b></a>
 				<a class="SuperiorSelecionado" href=""><b>Questões</b></a>
 				<?php } ?>
             </div>
@@ -119,7 +119,7 @@ if(!empty($_SESSION['id_usuario'])){
         <br>
         
 
-        <div class="inputBox">
+		<div class="inputBox">
 			<label><b>Matéria</b></label>
 		</div>
         <br>
@@ -160,20 +160,34 @@ if(!empty($_SESSION['id_usuario'])){
         </form>
         <br><br><br>
         
-            
-            
-            <form class="FormCriar_Perguntas" method="post" action="PHPCriar_questao.php">
+		<?php            
+		
+		$_SESSION['Materia'] = $Materia;
+		echo $_SESSION['Materia'];
 
+		 ?>
+            
+            <form class="" method="post" action="PHPCriar_Perguntas.php">
+	
+            <div class="Tema">
+                <div class="inputBox">
+                <label><b>Tema</b></label>
+                <select name="Tema">
+                <option>Selecionar</option>
                     <?php 
-                       
+                        $Query_Perguntas = "SELECT Tema FROM temas where Materia = '$Materia'"; //Pegando dados do evento do banco
+                        $Perguntas = mysqli_query($conexao, $Query_Perguntas) or die (mysqli_error($conexao));
+                        while($rows_perguntas = mysqli_fetch_assoc($Perguntas))
+                            { ?>
+                                <option value="<?php echo $rows_perguntas['Tema']; ?>"><?php echo $rows_perguntas['Tema']; ?></option>
 
-                     
-						$_SESSION['Materia'] = $Materia;
-						echo $_SESSION['Materia'];
-                    
-                        
+                        <?php 
+
+                        } 
                     ?>
-
+                    </select>
+				</div>
+			</div>
         
             <br><br><br><br>
             <div class="inputBox">

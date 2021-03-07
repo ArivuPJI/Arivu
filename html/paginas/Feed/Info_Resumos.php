@@ -18,8 +18,8 @@ if(!empty($_SESSION['id_usuario'])){
 	<title>Feed Resumos</title>
 </head>
 <body>
-	<div class="NavegaçãoLateral"> <!--Navegação Lateral -->
-	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+<div class="NavegaçãoLateral"> <!--Navegação Lateral -->
+	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Arivu</h1>
 		<div class="liLateral">
 			<li class="LateralSelecionado"><a href="Feed_Eventos.php"><b>Feed</b></a></li>
 			<li><a href="../Provas/Prova.php">Provas</a></li>
@@ -32,7 +32,7 @@ if(!empty($_SESSION['id_usuario'])){
 			<?php if($_SESSION['Restricao'] == "Estudante"){ ?>
 			<li><a href="../Redação/Aluno/Redação_Aluno.php">Redação</a></li>
 			<?php }?>
-			<li><a href="../Criar/Criar_Resumo.php">Criar</a></li>
+			<li><a href="../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
 			<?php } ?>
 			<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
 			

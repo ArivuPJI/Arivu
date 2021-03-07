@@ -24,11 +24,12 @@ session_start();
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="js/personalizado.js"></script>
+        <title>Agenda</title>
     </head>
     <body>
     
     <div class="NavegaçãoLateral"> <!--Navegação Lateral -->
-	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1><b>Arivu</b></h1>
 	<div class="liLateral">
 			<li><a href="../Feed/Feed_Eventos.php">Feed</a></li>
 			<li><a href="../Provas/Prova.php">Provas</a></li>

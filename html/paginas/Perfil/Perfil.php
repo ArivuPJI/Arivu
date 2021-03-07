@@ -14,13 +14,13 @@ if(!empty($_SESSION['id_usuario'])){
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
-	<title>Feed Eventos</title>
+	<title>Perfil</title>
 </head>
 <body>
 	<div class="NavegaçãoLateral"> <!--Navegação Lateral -->
-	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Arivu</h1>
 	<div class="liLateral">
-			<li><a href="Feed_Eventos.php">Feed</a></li>
+			<li><a href="../Feed/Feed_Eventos.php">Feed</a></li>
 			<li><a href="../Provas/Prova.php">Provas</a></li>
 			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
 			<li><a href="../Agenda/Agenda.php">Agenda</a></li>

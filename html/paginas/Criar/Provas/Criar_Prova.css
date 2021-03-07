@@ -1,3 +1,21 @@
+@media print {
+body *
+{
+    visibility: hidden;
+}
+
+.Publicações, .Publicações *
+{
+    visibility: visible;
+}
+.Publicações {
+    position: fixed;
+    left: -120px;
+    top: -100px;
+    width: 2000px;
+}
+
+}
 #Teste
 {
     position:initial ;
@@ -21,18 +39,17 @@
 }
 
 
-.a
+
+.Caracteristicas
 {
-    background-color: green;
+    width: 800px;
+    margin: 0 auto;
+
+    margin-left: 127px;
 }
 
-.b {
-    background-color: red;
-}
-
-.TTT
+.Caracteristicas h3
 {
-    width: 400px;
-    background-color: blue;
+    text-align: center;
+    
 }
-

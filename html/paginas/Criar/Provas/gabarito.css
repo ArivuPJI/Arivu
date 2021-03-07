@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'FonteMuli';
+    src: url('../../css/fontes/muli-variablefont_wght-webfont.woff2') format('woff2'),
+         url('../../css/fontes/muli-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body
+{
+    font-family: 'FonteMuli';
+    margin: 0 auto;
+    padding:  0%;
+}
+
+a 
+{ 
+    padding: 0px 7px 3px 7px;
+    color: rgb(97, 97, 97);
+    margin-bottom: 2px;
+}
+.a 
+{ background-color: rgba(39, 193, 39, 0.764);
+    padding: 2px 8px 4px 8px;
+    color: white;
+}
+
+.teste 
+{
+    width: 500px;
+    margin: 0 auto;
+    top: 270px;
+    position: relative;
+    z-index: 1001;
+}
+
+.b 
+{ 
+    position: absolute;
+    background-color: rgba(255, 255, 77, 0.826);
+    width: 30px;
+    padding: 5px 3px 4px 6px;
+    left: 650px;
+    top: 270px;
+    border: 1px solid gray;
+    z-index: 999;
+}
+
+.c 
+{
+    background-color: rgba(255, 57, 57, 0.778);
+    padding: 3px 7px 3px 7px;
+    color: white;
+}
+
+.q
+{ 
+     border: 1px solid gray;
+     width: 144px;
+     padding: 0px 0px 4px 0px;
+     margin: 0 auto;
+     margin-top: 25px;
+}
+
+
+.CorpoFiltros1
+{
+    position: absolute;
+    width: 280px;
+    max-height: 580px;
+    background-color: white;
+    margin-top: 70px;
+    margin-left: 32px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(202, 202, 202, 0.472);
+
+    padding-bottom: 25px;
+}
+
+.CorpoFiltros1 b p
+        {
+            font-size: 22px;
+            margin-left: 30px;
+            color: #434040;
+        }

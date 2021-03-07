@@ -27,7 +27,7 @@ if(!empty($_SESSION['id_usuario'])){
 				<li><a href="../../Perfil/Perfil.php">Perfil</a></li>
 				<li class="LateralSelecionado"><a href="../Criar/Criar_Evento.php"><b>Criar</b></a></li>
 				<?php } ?>
-				<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
+				<li><?php echo "<a href='../../../../login/Sair.php'>Sair</a>"; ?></li>
 				
 		</div>
 	</div>
@@ -153,19 +153,15 @@ if(!empty($_SESSION['id_usuario'])){
 			<input type="radio" name="Materia" value="Química" onclick="return myfun()" class="form_radio" id="Química">
 			<label for="Química" class="form_label">Química</label>
         </div>
-        <div class="btnMateria">
+		<div class="btnMateria">
 			<input type="hidden" name="ação1" value="Teste">
-			<input type="submit" value="Matéria">
+
             </div>
-        </form>
+			
+			<?php $_SESSION['Materia'] = $Materia; ?>
+				</form>
         <br><br><br>
         
-		<?php            
-		
-		$_SESSION['Materia'] = $Materia;
-		echo $_SESSION['Materia'];
-
-		 ?>
             
             <form class="" method="post" action="PHPCriar_Perguntas.php">
 	
@@ -344,6 +340,12 @@ if(!empty($_SESSION['id_usuario'])){
 				
 			}
 
+			var radios = document.querySelectorAll('input[name="Materia"]');
+[].forEach.call(radios, function (radio) {
+    radio.addEventListener('change', function () {
+        document.querySelector('form').submit();
+    });
+});
 		</script>
 		
 

@@ -14,29 +14,33 @@ if(!empty($_SESSION['id_usuario'])){
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
-	<title>Feed Eventos</title>
+		<title>Perfil</title>
 </head>
 <body>
 	<div class="NavegaçãoLateral"> <!--Navegação Lateral -->
-	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Arivu</h1>
 	<div class="liLateral">
-			<li><a href="Feed_Eventos.php">Feed</a></li>
+			<li><a href="../Feed/Feed_Eventos.php">Feed</a></li>
 			<li><a href="../Provas/Prova.php">Provas</a></li>
 			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
 			<li><a href="../Agenda/Agenda.php">Agenda</a></li>
 			<li  class="LateralSelecionado"><a href=""><b>Perfil</b></a></li>
+			<li><a href="../Redação/Professor/Minhas_Redações.php">Redação</a></li>
+			
+			<?php if($_SESSION['Restricao'] == "Estudante"){ ?>
 			<li><a href="../Redação/Aluno/Redação_Aluno.php">Redação</a></li>
+			<?php }?>
 			<li><a href="../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
 			<?php } ?>
 			<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
-		</div>
+			
 		</div>
     
 		<div class="BodyConteudo"> <!-- Corpo, onde fica todo  conteudo do site -->
 	<div class="NavegaçãoSuperior">
 	<!-- Pesquisa -->
 		<div class="aSuperior">
-			<a href="Feed_Eventos.php"><b>Público</b></a>
+			<a href="Perfil.php"><b>Público</b></a>
 			<a class="SuperiorSelecionado" href="Perfil_Privado.php"><b>Privado</b></a>
 		</div>
 	</div>

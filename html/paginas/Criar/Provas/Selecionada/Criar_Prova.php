@@ -1,16 +1,20 @@
 <?php 
 session_start();
-include_once("../../../conexao.php");
+include_once("../../../../../conexao.php");
 
 if(!empty($_SESSION['id_usuario'])){
     $id_estudante = $_SESSION['id_usuario'];
+
+	$Truncate = "Truncate table questoes";
+    $Truncate_Execute = mysqli_query($conexao, $Truncate);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../../../css/Teste.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../../css/Teste.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -18,21 +22,19 @@ if(!empty($_SESSION['id_usuario'])){
 </head>
 <body>
 	<div class="NavegaçãoLateral"> <!--Navegação  Lateral -->
-		<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Arivu</h1>
+		<img class="LogoLateral" src="../../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
 		<div class="liLateral">
-				<li><a href="../Feed/Feed_Eventos.php">Feed</a></li>
-				<li class="LateralSelecionado"><a href="../Provas/Prova.php"><b>Provas</b></a></li>
+				<li><a href="../../Feed/Feed_Eventos.php">Feed</a></li>
+				<li><a href="">Provas</a></li>
 				<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-				<li><a href="../Agenda/Agenda.php">Agenda</a></li>
-				<li><a href="../Perfil/Perfil.php">Perfil</a></li>
-				<li><a href="../Redação/Professor/Minhas_Redações.php">Redação</a></li>
-				<li><a href="../Criar/Evento/Criar_Evento.php">Criar</a></li>
+				<li><a href="">Agenda</a></li>
+				<li><a href="">Perfil</a></li>
+				<li class="LateralSelecionado"><a href="../Criar/Criar_Evento.php"><b>Criar</b></a></li>
 				<?php } ?>
 				<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
 				
 		</div>
 	</div>
-
 	<?php
 	//Pegando os valores das checkbox do lateral direita
     $Materia = "";
@@ -104,11 +106,17 @@ if(!empty($_SESSION['id_usuario'])){
 	<div class="BodyConteudo"> <!-- Corpo, onde fica todo  conteudo do site -->
         <div class="NavegaçãoSuperior"> <!-- Parte superior  -->
             <div class="aSuperior"> 
+				<a href="../Resumos/Criar_Resumo.php"><b>Resumos</b></a>
+				<?php if($_SESSION['Restricao'] == "Professor"){?>
+				<a href="../Eventos/Criar_Evento.php"><b>Eventos</b></a>
                 <a class="SuperiorSelecionado" href="Criar_Prova.php"><b>Provas</b></a>
+				<a href="../Questões/Criar_Perguntas.php"><b>Questões</b></a>
+				<?php } ?>
             </div>
         </div>
 
         <div class="Publicações">
+		<a href="Selecionada/Criar_Prova.php">Selecionada</a>
         <div class="container">
             <div class="FormEventos" method="post" action="PHPCriar_Resumo.php">
             <h2>Crie a sua questão...</h2><br><br>
@@ -116,15 +124,18 @@ if(!empty($_SESSION['id_usuario'])){
         <br>
         
 
-		<div class="inputBox">
+        <div class="inputBox">
 			<label><b>Matéria</b></label>
 		</div>
         <br>
 
-        <form action="" method="post">
+        <form method="POST" action="" name="Teste">
         <div class="Filtros">
-			<input type="radio" name="Materia" value="Matemática" onclick="return myfun()" id="Matemática">
-			<label for="Matemática">Matemática</label>
+
+			
+			<input type="radio" name="Materia" value="Matemática" onclick="return myfun()" class="form_radio" id="Matemática">
+			<label for="Matemática" class="form_label">Matemática</label>
+
 			
 			<input type="radio" name="Materia" value="Física" onclick="return myfun()" class="form_radio" id="Física">
 			<label for="Física" class="form_label">Física</label>
@@ -150,6 +161,7 @@ if(!empty($_SESSION['id_usuario'])){
 			<input type="radio" name="Materia" value="Química" onclick="return myfun()" class="form_radio" id="Química">
 			<label for="Química" class="form_label">Química</label>
         </div>
+
         <div class="btnMateria">
 			<input type="hidden" name="ação1" value="Teste">
 
@@ -160,9 +172,12 @@ if(!empty($_SESSION['id_usuario'])){
 
         <br><br><br>
         
-            
-            
-            <form method="post" action="PHPProva.php">
+		<?php 
+                        
+                    
+                
+                    ?>
+            <form class="FormCriar_Perguntas" method="post" action="Teste.php">
             <div class="Tema">
                 <div class="inputBox">
                 <label><b>Tema</b></label>
@@ -175,11 +190,7 @@ if(!empty($_SESSION['id_usuario'])){
                             { ?>
                                 <option value="<?php echo $rows_perguntas['Tema']; ?>"><?php echo $rows_perguntas['Tema']; ?></option>
 
-                        <?php 
-                        
-                    
-                        } 
-                    ?>
+							<?php } ?>
                     </select>
                 </div>
             </div>
@@ -189,30 +200,20 @@ if(!empty($_SESSION['id_usuario'])){
 		</div>
         <br>
         
-        
         <div class="Ano">
-			<input type="radio" name="Ano" value="Primeiro" onclick="return myfun()" id="Primeiro" required>
+			<input type="radio" name="Ano" value="Primeiro" onclick="return myfun()" id="Primeiro">
 			<label for="Primeiro">Primeiro</label>
 			
-			<input type="radio" name="Ano" value="Segundo" onclick="return myfun()" class="form_radio" id="Segundo" required>
+			<input type="radio" name="Ano" value="Segundo" onclick="return myfun()" class="form_radio" id="Segundo">
             <label for="Segundo" class="form_label">Segundo</label>
             
-            <input type="radio" name="Ano" value="Terceiro" onclick="return myfun()" class="form_radio" id="Terceiro" required>
+            <input type="radio" name="Ano" value="Terceiro" onclick="return myfun()" class="form_radio" id="Terceiro">
             <label for="Terceiro" class="form_label">Terceiro</label>
             
-            <input type="radio" name="Ano" value="Vestibular" onclick="return myfun()" class="form_radio" id="Vestibular" required>
+            <input type="radio" name="Ano" value="Vestibular" onclick="return myfun()" class="form_radio" id="Vestibular">
 			<label for="Vestibular" class="form_label">Vestibular</label>
 				
         </div>
-
-		<div class="box">
-                <div class="inputBox">
-                    <label><b>Número</b></label>
-                    <input type="text" name="Numero" required>
-                </div>
-            </div>
-		
-        
 
 			<div class="btnFiltrar">
 			<input type="hidden" name="ação" value="Filtrar">
@@ -285,23 +286,18 @@ if(!empty($_SESSION['id_usuario'])){
 						newvar = newvar + 1;
 					}
 				}
-				
 			}
-			var radios = document.querySelectorAll('input[name="Materia"]');
+
+var radios = document.querySelectorAll('input[name="Materia"]');
 [].forEach.call(radios, function (radio) {
     radio.addEventListener('change', function () {
         document.querySelector('form').submit();
     });
 });
+</script>
 
-		</script>
-		
-
-		
-       
 </form>
-	</div>
-	
+</div>   
 	<div class="LateralDireita">
 			
 	</div>

@@ -71,23 +71,28 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
-	<title>Feed Eventos</title>
+	<title>Provas</title>
 </head>
 <body>
 
 
 	<div class="NavegaçãoLateral"> <!--Navegação Lateral -->
-	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Arivu</h1>
 	<div class="liLateral">
-			<li><a href="Feed_Eventos.php">Feed</b></li>
-			<li  class="LateralSelecionado"><a href="../Provas/Prova.php"><b>Provas</b></a></a></li>
+    <li><a href="Feed_Eventos.php">Feed</a></li>
+			<li class="LateralSelecionado"><a href="../Provas/Prova.php"><b>Provas</b></a></li>
 			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-			<li><a href="">Agenda</a></li>
-			<li><a href="">Perfil</a></li>
-			<li><a href="../Redação/Redação.php">Redação</a></li>
+			<li><a href="../Agenda/Agenda.php">Agenda</a></li>
+			<li><a href="../Perfil/Perfil.php">Perfil</a></li>
+			<?php if($_SESSION['Restricao'] == "Professor"){ ?>
+			<li><a href="../Redação/Professor/Minhas_Redações.php">Redação</a></li>
+			<?php }?>
+			<?php if($_SESSION['Restricao'] == "Estudante"){ ?>
+			<li><a href="../Redação/Aluno/Redação_Aluno.php">Redação</a></li>
+			<?php }?>
 			<li><a href="../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
 			<?php } ?>
-			<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"?></li>
+			<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
 			
 		</div>
 	</div>

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include_once("../../../../conexao.php");
+include_once("../../../../../conexao.php");
 
 if(!empty($_SESSION['id_usuario'])){
     $id_estudante = $_SESSION['id_usuario'];
@@ -10,7 +10,7 @@ if(!empty($_SESSION['id_usuario'])){
 <html lang="pt_br">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../../../../css/Teste.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../../css/Teste.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -18,14 +18,14 @@ if(!empty($_SESSION['id_usuario'])){
 </head>
 <body>
 	<div class="NavegaçãoLateral"> <!--Navegação  Lateral -->
-		<img class="LogoLateral" src="../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+		<img class="LogoLateral" src="../../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
 		<div class="liLateral">
-				<li><a href="../../Feed/Feed_Eventos.php">Feed</a></li>
-				<li><a href="">Provas</a></li>
+				<li><a href="../../../Feed/Feed_Eventos.php">Feed</a></li>
+				<li><a href="../../../Provas/Prova.php">Provas</a></li>
 				<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-				<li><a href="">Agenda</a></li>
-				<li><a href="">Perfil</a></li>
-				<li class="LateralSelecionado"><a href="../Criar/Criar_Evento.php"><b>Criar</b></a></li>
+				<li><a href="../../../Agenda/Agenda.php">Agenda</a></li>
+				<li><a href="../../../Perfil/Perfil.php">Perfil</a></li>
+				<li class="LateralSelecionado"><a href="../../Criar/Criar_Evento.php"><b>Criar</b></a></li>
 				<?php } ?>
 				<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
 				
@@ -102,16 +102,17 @@ if(!empty($_SESSION['id_usuario'])){
 	<div class="BodyConteudo"> <!-- Corpo, onde fica todo  conteudo do site -->
         <div class="NavegaçãoSuperior"> <!-- Parte superior  -->
             <div class="aSuperior"> 
-				<a href="../Resumos/Criar_Resumo.php"><b>Resumos</b></a>
+				<a href="../../Resumos/Criar_Resumo.php"><b>Resumos</b></a>
 				<?php if($_SESSION['Restricao'] == "Professor"){?>
-				<a href="../Eventos/Criar_Evento.php"><b>Eventos</b></a>
+				<a href="../../Eventos/Criar_Evento.php"><b>Eventos</b></a>
                 <a class="SuperiorSelecionado" href="Criar_Prova.php"><b>Provas</b></a>
-				<a href="../Questões/Criar_Perguntas.php"><b>Questões</b></a>
+				<a href="../../Questões/Criar_Perguntas.php"><b>Questões</b></a>
 				<?php } ?>
             </div>
         </div>
 
         <div class="Publicações">
+		<a href="Selecionada/Criar_Prova.php">Selecionada</a>
         <div class="container">
             <div class="FormEventos" method="post" action="PHPCriar_Resumo.php">
             <h2>Crie a sua questão...</h2><br><br>
@@ -153,11 +154,14 @@ if(!empty($_SESSION['id_usuario'])){
 			<input type="radio" name="Materia" value="Química" onclick="return myfun()" class="form_radio" id="Química">
 			<label for="Química" class="form_label">Química</label>
         </div>
-        <div class="btnMateria">
+		<div class="btnMateria">
 			<input type="hidden" name="ação1" value="Teste">
-			<input type="submit" value="Matéria">
+
             </div>
-        </form>
+			
+			<?php $_SESSION['Materia'] = $Materia; ?>
+				</form>
+
         <br><br><br>
         
             
@@ -176,7 +180,7 @@ if(!empty($_SESSION['id_usuario'])){
                                 <option value="<?php echo $rows_perguntas['Tema']; ?>"><?php echo $rows_perguntas['Tema']; ?></option>
 
                         <?php 
-                        $_SESSION['Materia'] = $Materia;
+                        
                     
                         } 
                     ?>
@@ -285,13 +289,20 @@ if(!empty($_SESSION['id_usuario'])){
 				
 			}
 
+			var radios = document.querySelectorAll('input[name="Materia"]');
+[].forEach.call(radios, function (radio) {
+    radio.addEventListener('change', function () {
+        document.querySelector('form').submit();
+    });
+});
+
 		</script>
 		
 
 		
        
 </form>
-
+	</div>
 	<div class="LateralDireita">
 			
 	</div>

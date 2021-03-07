@@ -18,7 +18,7 @@ if(!empty($_SESSION['id_usuario'])){
 </head>
 <body>
 	<div class="NavegaçãoLateral"> <!--Navegação  Lateral -->
-		<img class="LogoLateral" src="../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+		<img class="LogoLateral" src="../../../../css/imagens/Logo_Lateral.png"><h1>Arivu</h1>
 		<div class="liLateral">
 				<li><a href="../../Feed/Feed_Eventos.php">Feed</a></li>
 				<li><a href="">Provas</a></li>
@@ -76,7 +76,7 @@ if(!empty($_SESSION['id_usuario'])){
 			<a href="../Resumos/Criar_Resumo.php"><b>Resumos</b></a>
 				<?php if($_SESSION['Restricao'] == "Professor"){?>
 				<a class="SuperiorSelecionado" href="Criar_Evento.php"><b>Eventos</b></a>
-                <a href="../Provas/Criar_Prova.php"><b>Provas</b></a>
+                <a href="../Provas/Aleatória/Criar_Prova.php"><b>Provas</b></a>
 				<a href=""><b>Questões</b></a>
 				<?php } ?>
             </div>

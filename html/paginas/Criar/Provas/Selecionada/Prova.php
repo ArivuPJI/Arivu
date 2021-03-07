@@ -1,10 +1,10 @@
 <?php
 session_start();
-	include_once("../../../../conexao.php");
-    $Tema = $_POST['Tema'];
+	include_once("../../../../../conexao.php");
+
     $Materia = $_SESSION['Materia'];
-	$Ano = $_POST['Ano'];
-	$Numero = $_POST['Numero'];
+
+
     ?>
 
 <?php 
@@ -16,8 +16,9 @@ if(!empty($_SESSION['id_usuario'])){
 <html lang="pt_br">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../../../../css/Feed1.css"/>
-	<link rel="stylesheet" type="text/css" href="Criar_Prova.css"/>
+	<link rel="stylesheet" type="text/css" href="../Criar_Prova.css"/>
+	<link rel="stylesheet" type="text/css" href="../gabarito.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../../css/Feeds.css"/>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
@@ -25,7 +26,7 @@ if(!empty($_SESSION['id_usuario'])){
 </head>
 <body>
 	<div class="NavegaçãoLateral"> <!--Navegação  Lateral -->
-		<img class="LogoLateral" src="../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+		<img class="LogoLateral" src="../../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
 		<div class="liLateral">
 				<li><a href="../Feed/Feed_Eventos.php">Feed</a></li>
 				<li><a href="">Provas</a></li>
@@ -54,25 +55,21 @@ if(!empty($_SESSION['id_usuario'])){
             </div>
         </div>
 
+
     <div class="Publicações">
+	<div class="Caracteristicas" style="text-align: center;">
+		<h3>Avaliação de <?php echo $Materia; ?></h3>
+		<p><b>Nome: </b>____________________________________________________________________</p>
+		<p><b>Turma: </b>________________⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<b>Data: </b>____ /_____ /_____</p>
+	</div>
     <?php
 
 
-$Truncate = "Truncate table questoes";
-$Truncate_Execute = mysqli_query($conexao, $Truncate);
 
-    $Query_Prova = "SELECT * FROM aux where Tema = '$Materia'"; //Pegando dados do evento do banco
-	$Prova = mysqli_query($conexao, $Query_Prova) or die (mysqli_error($conexao));
-	while($rows_eventos = mysqli_fetch_assoc($Prova)) 
-	{
-		$Pergunta = $rows_eventos['questao'];
-
-		$sql1 = "Insert into questoes (questao) values ('$Pergunta')";
-		$execute1 = mysqli_query($conexao, $sql1);
-	}
-
-	
-	$Query_Limite = "SELECT * from questoes order by id desc limit 1"; //Teste
+$Truncate_gabarito = "Truncate table gabarito";
+$Truncate_Execute_gabarito = mysqli_query($conexao, $Truncate_gabarito);
+                
+$Query_Limite = "SELECT * from questoes order by id desc limit 1"; //Teste
 	$Limita = mysqli_query($conexao, $Query_Limite) or die (mysqli_error($conexao));
 	while($rows_limite = mysqli_fetch_assoc($Limita)) 
 	{
@@ -80,19 +77,19 @@ $Truncate_Execute = mysqli_query($conexao, $Truncate);
 	}
 
 
-	for($Numero; $Numero > 0; $Numero--){
-		
-		$random = rand(1, $Limite);
-
-
-	$Query_Teste = "SELECT * from questoes where id = '$random'"; //Teste
+	
+	$Query_Teste = "SELECT * from questoes"; //Teste
 	$Limita1 = mysqli_query($conexao, $Query_Teste) or die (mysqli_error($conexao));
+
+	
 	?>
-	<div class="Perguntas">
+
+	<div class="Perguntas" style="border: none">
 	<?php
+	for($Limite; $Limite > 0; $Limite--){
 	while($rows_limite1 = mysqli_fetch_assoc($Limita1)) 
 	{
-	$id = $rows_limite1['id'];
+	$id = $rows_limite1['id_prova'];
 	$Query_Teste2 = "SELECT * from opcoes where id_questao = '$id'"; //Teste
 
 	echo "Valor (⠀⠀)";
@@ -104,28 +101,46 @@ $Truncate_Execute = mysqli_query($conexao, $Truncate);
 		$opcao = $rows_limite3['opcao'];
 		$alternativa = $rows_limite3['correta'];
 		echo "(".$alternativa.") " .$opcao. "<br>";
-	}}  ?>	</div> <?php
+	}?> <hr>
+	<?php
 	
-	
+
 
 	$Query_Teste4 = "SELECT * from opcoes where id_questao = '$id'"; //Teste
 	$Teste4 = mysqli_query($conexao, $Query_Teste4) or die (mysqli_error($conexao));
 	while($rows_limite4 = mysqli_fetch_assoc($Teste4)) 
 	{ 
+
 	$correta = $rows_limite4['correta'];
 	$correta_1 = $rows_limite4['correta_1'];
-	}
-}
+
+	$Query_Teste5 = "INSERT INTO gabarito (correta, correta_1, id_questao) values ('$correta','$correta_1', '$id')"; //Teste
+	$Teste5 = mysqli_query($conexao, $Query_Teste5) or die (mysqli_error($conexao));
+}}
+	}  ?>	</div> <?php
 ?>
 
-
+	</div>
 	</div>
 	<div class="LateralDireita">
 	<form method="Post" action="">
 			<!-- Filtros da Lateral direita -->
-			<div class="CorpoFiltros">
+			<div class="CorpoFiltros1">
 				<b><p>GABARITO</p></b>
 				<p class="Selecionar">Você pode imprimir o gabarito</p>
+				<div class="q">
+				<?php
+				
+				$Query_Teste5 = "SELECT * from gabarito"; //Teste
+				$Teste5 = mysqli_query($conexao, $Query_Teste5) or die (mysqli_error($conexao));
+				while($rows_limite5 = mysqli_fetch_assoc($Teste5)) 
+				{ ?>
+				<?php
+						if($rows_limite5['correta'] == $rows_limite5['correta_1']){
+					?><a class="a"><?php echo $rows_limite5['correta_1']; ?></a><?php }else{ ?><a><?php echo $rows_limite5['correta']; ?></a><?php }
+				} ?>
+				
+				</div>
 				<!-- Radios Button -->
 				</div> 
 	

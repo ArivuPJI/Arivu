@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'FonteMuli';
+    src: url('../../css/fontes/muli-variablefont_wght-webfont.woff2') format('woff2'),
+         url('../../css/fontes/muli-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body
+{
+    font-family: 'FonteMuli';
+}
+
+.Corpo
+{
+    margin: 0 auto;
+    width: 1200px;
+    height: 600px;
+    background-color: #FAFAFA;
+    margin-top: 100px;
+
+    border-radius: 40px;
+    border-top: 28px solid #131432;
+    box-shadow: 0px 0px 20px rgba(215, 215, 215, 0.458);
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.Corpo_Info
+{
+    width: 800px;
+    height: 580px;
+
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 0px;
+    border-radius: 20px;
+    margin-top: 15px;
+    z-index: 1;
+
+    padding-top: 50px;
+}
+
+.Corpo_Tópicos
+{
+    width: 800px;
+    margin: 0 auto;
+
+    margin-top: 50px;
+
+}
+
+.Tópicos
+{
+    padding: 15px 30px 60px 30px;
+    
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    background-color: white;
+    margin-right: 30px;
+    color: #A986DE;
+
+    text-decoration: none;
+}
+
+#Não_Selecionado
+{
+    color: #1314323e;
+    background-color: #EFEFEF;
+    z-index: 0;
+    padding: 15px 30px 15px 30px;
+}
+
+.Números
+{
+    margin: 0 auto;
+    margin-right: 40px;
+    margin-left: 40px;
+
+
+    background-color: white;
+    border: 2px solid #A986DE;
+    border-radius: 50px;
+
+    float: left;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    margin-top: -25px;
+
+}
+
+.Corpo_Números
+{
+    margin: 0 auto;
+    width: 450px;
+
+    margin-top: 20px;
+    height: 2px;
+    background-color: #A986DE;
+    padding-left: 80px;
+
+    color: gray;
+}
+
+#Selecionado
+{
+    background-color: #A986DE;
+    color: white;
+}
+
+.Conteudo
+{
+    align-items: center;
+    text-align: center;
+
+    margin-left: -60px;
+}
+
+.inputBox
+{
+    margin-bottom: 50px;
+}
+
+.box .inputBox input
+{
+    margin-top: 40px;
+    margin-left: 20px;
+    width: 250px;
+    font-size: 16px;
+    color: #131432;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgba(70, 70, 70, 0.521);
+    outline: none;
+    background: transparent;
+}
+.inputBox label
+{
+    
+    margin-left: -50px;
+}
+
+
+.box input[type="submit"]
+        {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            background-image: linear-gradient(-90deg, #C1AADA, #9574C8);
+            padding: 10px 30px;
+            cursor: pointer;
+            border-radius: 50px;
+            margin-left: 65%;
+        }
+        .box input[type="submit"]:hover
+        {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            background-image: linear-gradient(-90deg, #a28bba, #6b4d96);
+            padding: 10px 30px;
+            cursor: pointer;
+            border-radius: 50px;
+            margin-left: 65%;
+        }

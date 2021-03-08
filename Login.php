@@ -38,7 +38,7 @@ session_start();
                     </div>
                 
                 <br>
-                    <a href="">Criar uma conta.</a> <!-- COLOCA AQUI, MIKE. Coloca ele ali na pasta de htm/cadastro-->
+                    <a href="html/cadastro/Cadatrados/Estudante/Cadastro_Estudante.php">Criar uma conta.</a> <!-- COLOCA AQUI, MIKE. Coloca ele ali na pasta de htm/cadastro-->
                     <br><br><br><br>
                     <input type="submit" name="btnLogin" value="ENTRAR">
             </div>

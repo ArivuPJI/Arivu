@@ -14,21 +14,26 @@ if(!empty($_SESSION['id_usuario'])){
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
-	<title>Feed Eventos</title>
+	<title>Criar Prova</title>
 </head>
 <body>
 	<div class="NavegaçãoLateral"> <!--Navegação  Lateral -->
-		<img class="LogoLateral" src="../../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+		<img class="LogoLateral" src="../../../../../css/imagens/Logo_Lateral.png"><h1>Arivu</h1>
 		<div class="liLateral">
-				<li><a href="../../../Feed/Feed_Eventos.php">Feed</a></li>
-				<li><a href="../../../Provas/Prova.php">Provas</a></li>
-				<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-				<li><a href="../../../Agenda/Agenda.php">Agenda</a></li>
-				<li><a href="../../../Perfil/Perfil.php">Perfil</a></li>
-				<li class="LateralSelecionado"><a href="../../Criar/Criar_Evento.php"><b>Criar</b></a></li>
-				<?php } ?>
-				<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
-				
+			<li><a href="../../../Feed/Feed_Eventos.php">Feed</a></li>
+			<li><a href="../../../Provas/Prova.php">Provas</a></li>
+			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
+			<li><a href="../../../Agenda/Agenda.php">Agenda</a></li>
+			<li><a href="../../../Perfil/Perfil.php">Perfil</a></li>
+			<?php if($_SESSION['Restricao'] == "Professor"){ ?>
+			<li><a href="../../../Redação/Professor/Minhas_Redações.php">Redação</a></li>
+			<?php }?>
+			<?php if($_SESSION['Restricao'] == "Estudante"){ ?>
+			<li><a href="../../../Redação/Aluno/Redação_Aluno.php">Redação</a></li>
+			<?php }?>
+			<li class="LateralSelecionado"><a href="../../../Criar/Resumos/Criar_Resumo.php"><b>Criar</b></a></li>
+			<?php } ?>
+			<li><?php echo "<a href='../../../../login/Sair.php'>Sair</a>"; ?></li>	
 		</div>
 	</div>
 	<?php
@@ -112,10 +117,20 @@ if(!empty($_SESSION['id_usuario'])){
         </div>
 
         <div class="Publicações">
-		<a href="Selecionada/Criar_Prova.php">Selecionada</a>
+		
+
         <div class="container">
             <div class="FormEventos" method="post" action="PHPCriar_Resumo.php">
-            <h2>Crie a sua questão...</h2><br><br>
+            <h2>Crie a sua prova aleatória...</h2>
+			<div class="Corpo_Modo">
+			<div class="Modo" id="Selecionado">
+				<a href="Aleatória/Criar_Prova.php" class="Selecionado" id="A">Aleatória</a>
+			</div>
+			<div class="Modo">
+				<a class="A" id="A"  href="../Selecionada/Criar_Prova.php">Selecionada</a>
+			</div>
+		</div>
+		<br><br>
             
         <br>
         
@@ -187,7 +202,7 @@ if(!empty($_SESSION['id_usuario'])){
                     </select>
                 </div>
             </div>
-            <br><br><br><br>
+			
             <div class="inputBox">
 			<label><b>Ano</b></label>
 		</div>

@@ -31,18 +31,24 @@ session_start();
     <div class="NavegaçãoLateral"> <!--Navegação Lateral -->
 	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1><b>Arivu</b></h1>
 	<div class="liLateral">
-			<li><a href="../Feed/Feed_Eventos.php">Feed</a></li>
+    <li><a href="../Feed/Feed_Eventos.php">Feed</a></li>
 			<li><a href="../Provas/Prova.php">Provas</a></li>
 			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-			<li class="LateralSelecionado"><a href=""><b>Agenda</b></a></li>
+			<li class="LateralSelecionado"><a href="../Agenda/Agenda.php"><b>Agenda</b></a></li>
 			<li><a href="../Perfil/Perfil.php">Perfil</a></li>
+			<?php if($_SESSION['Restricao'] == "Professor"){ ?>
 			<li><a href="../Redação/Professor/Minhas_Redações.php">Redação</a></li>
+			<?php }?>
+			<?php if($_SESSION['Restricao'] == "Estudante"){ ?>
+			<li><a href="../Redação/Aluno/Redação_Aluno.php">Redação</a></li>
+			<?php }?>
 			<li><a href="../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
 			<?php } ?>
-			<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"?></li>
-			
-		</div>
+			<li><?php echo "<a href='../login/Sair.php'>Sair</a>"; ?></li>	
 	</div>
+    </div>
+	
+    <div class="LateralDireita"></div>
     <div class="BodyConteudo"> <!-- Corpo, onde fica todo  conteudo do site -->
 	<div class="NavegaçãoSuperior">
 	<!-- Pesquisa -->
@@ -199,7 +205,6 @@ session_start();
                 </div>
             </div>
         </div>
-	
-    <div class="LateralDireita"></div>
+
     </body>
 </html>

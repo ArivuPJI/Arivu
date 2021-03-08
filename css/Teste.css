@@ -429,3 +429,56 @@ body
                 z-index: 1;
                 top: 0px;
             }
+
+
+            .Corpo_Modo
+            {
+                float: right;
+                width: 360px;
+                height: 50px;
+                display: inline-block;
+                margin-top: -50px;
+                margin-bottom: 40px;
+            }
+
+            .Modo
+            {
+                text-decoration: none;
+                width: 110px;
+                height: 25px;
+                
+
+                text-align: center;
+                padding-top: 5px;
+
+                border: 1px gray solid;
+                float: left;
+                color: gray;
+            }
+
+            #Selecionado
+            {
+                text-decoration: none;
+                width: 110px;
+                height: 25px;
+                background-color: #57cd53;
+                
+
+                text-align: center;
+                padding-top: 5px;
+
+                border: 1px gray solid;
+                float: left;
+            }
+
+            .Selecionado
+            {
+                color: white;
+                text-decoration: none;
+            }
+
+            .A 
+            {
+                color: gray;
+                text-decoration: none;
+            }

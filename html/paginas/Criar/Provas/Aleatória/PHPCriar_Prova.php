@@ -22,21 +22,26 @@ if(!empty($_SESSION['id_usuario'])){
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
-	<title>Feed Eventos</title>
+	<title>Prova Aleatória</title>
 </head>
 <body>
-	<div class="NavegaçãoLateral"> <!--Navegação  Lateral -->
-		<img class="LogoLateral" src="../../../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
+<div class="NavegaçãoLateral"> <!--Navegação  Lateral -->
+		<img class="LogoLateral" src="../../../../../css/imagens/Logo_Lateral.png"><h1>Arivu</h1>
 		<div class="liLateral">
-				<li><a href="../Feed/Feed_Eventos.php">Feed</a></li>
-				<li><a href="">Provas</a></li>
-				<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
-				<li><a href="">Agenda</a></li>
-				<li><a href="">Perfil</a></li>
-				<li class="LateralSelecionado"><a href="../Criar/Criar_Evento.php"><b>Criar</b></a></li>
-				<?php } ?>
-				<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
-				
+			<li><a href="../../../Feed/Feed_Eventos.php">Feed</a></li>
+			<li><a href="../../../Provas/Prova.php">Provas</a></li>
+			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
+			<li><a href="../../../Agenda/Agenda.php">Agenda</a></li>
+			<li><a href="../../../Perfil/Perfil.php">Perfil</a></li>
+			<?php if($_SESSION['Restricao'] == "Professor"){ ?>
+			<li><a href="../../../Redação/Professor/Minhas_Redações.php">Redação</a></li>
+			<?php }?>
+			<?php if($_SESSION['Restricao'] == "Estudante"){ ?>
+			<li><a href="../../../Redação/Aluno/Redação_Aluno.php">Redação</a></li>
+			<?php }?>
+			<li class="LateralSelecionado"><a href="../../../Criar/Resumos/Criar_Resumo.php"><b>Criar</b></a></li>
+			<?php } ?>
+			<li><?php echo "<a href='../../../../login/Sair.php'>Sair</a>"; ?></li>	
 		</div>
 	</div>
 	<?php
@@ -46,11 +51,11 @@ if(!empty($_SESSION['id_usuario'])){
 	<div class="BodyConteudo"> <!-- Corpo, onde fica todo  conteudo do site -->
         <div class="NavegaçãoSuperior"> <!-- Parte superior  -->
             <div class="aSuperior"> 
-				<a href="Criar_Resumo.php"><b>Resumos</b></a>
+				<a href="../../Eventos/Criar_Evento.php"><b>Resumos</b></a>
 				<?php if($_SESSION['Restricao'] == "Professor"){?>
-				<a href="Criar_Evento.php"><b>Eventos</b></a>
-                <a class="SuperiorSelecionado" href="Criar_Prova.php"><b>Provas</b></a>
-				<a href=""><b>Questões</b></a>
+				<a href="../../Eventos/Criar_Evento.php"><b>Eventos</b></a>
+                <a class="SuperiorSelecionado" href=""><b>Provas</b></a>
+				<a href="../../Questões/Criar_Perguntas.php"><b>Questões</b></a>
 				<?php } ?>
             </div>
         </div>

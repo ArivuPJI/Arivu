@@ -26,7 +26,7 @@ if(!empty($_SESSION['id_usuario'])){
 				<li><a href="../Agenda/Agenda.php">Agenda</a></li>
 				<li><a href="../Perfil/Perfil.php">Perfil</a></li>
 				<li><a href="../Redação/Professor/Minhas_Redações.php">Redação</a></li>
-				<li><a href="../Criar/Evento/Criar_Evento.php">Criar</a></li>
+				<li><a href="../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
 				<?php } ?>
 				<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
 				

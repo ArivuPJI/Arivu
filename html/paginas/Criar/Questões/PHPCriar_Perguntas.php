@@ -77,4 +77,6 @@ include_once("../../Provas/config.php");
  $adicionando_E ->execute();
  }
 
+
+ header("Location: Criar_Perguntas.php");
 ?>

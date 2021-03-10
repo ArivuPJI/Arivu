@@ -12,7 +12,7 @@ include_once("../../../../conexao.php");
     echo $Titulo;
     if(!empty($Titulo))
     {
-        $sql = "INSERT INTO redacoes (`Tema`, `Título`, `Redação`, `Nome_Aluno`, `Id_Aluno`, `Estado`, `Data`, Id_Professor, Nome_Professor) VALUES ('$Tema', '$Titulo', '$Conteudo', '$Nome_Autor', '$Id_Autor', 'Não', 0000-00-00, 0, '')";
+        $sql = "INSERT INTO redacoes (`Tema`, `Título`, `Redação`, `Nome_Aluno`, `Id_Aluno`, `Estado`, `Data`, Id_Professor, Nome_Professor) VALUES ('$Tema', '$Titulo', '$Conteudo', '$Nome_Autor', '$Id_Autor', 'Não', NOW(), 0, '')";
         $execute = mysqli_query($conexao, $sql);
     }
     

@@ -46,7 +46,7 @@
 		$Limite = $rows_limite['id'];
 	
 
-    for($x = $rows_limite['id'];  $x > $Numero; $x--){
+    for($x = $Limite;  $x > $Numero; $x--){
 
     for($Numero; $Numero > 0; $Numero--){	
     $random = rand(1, $Limite);
@@ -146,12 +146,14 @@
             <div style="clear:both;"></div>
 </div>
     </div>
-<div class="LateralDireita">
-    
-    </div>
+
         </section>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/functions.js"></script>
         <script type="text/javascript" src="js/timer.js"></script>
+
+        <div class="LateralDireita">
+    
+    </div>
     </body>
 </html>

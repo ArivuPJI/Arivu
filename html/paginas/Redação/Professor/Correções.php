@@ -48,7 +48,7 @@ if(!empty($_SESSION['id_usuario'])){
     <div class="Publicações">
 	<h2 id="h2">Redações corrigidas</h2>
     <?php 
-        $Tabela_Redações = "SELECT * from redacoes where Id_Professor = '$id_estudante'"; //Teste
+        $Tabela_Redações = "SELECT * from redacoes where Id_Professor = '$id_estudante' && Estado = 'Sim'"; //Teste
         $Query_Redações = mysqli_query($conexao, $Tabela_Redações) or die (mysqli_error($conexao));
     
         
@@ -67,8 +67,11 @@ if(!empty($_SESSION['id_usuario'])){
 						<div id="DividirPublicação">
                         <div class="Teste">
 							<p><b>Data</b></p>
-								<p><?php echo $rows_redações['Data'];?></p>
+							<?php 
+								$data = $rows_redações['Data']; ?>
+								<p><?php echo date("d-m-Y", strtotime($data))."<br>";?></p>
 							</div>
+							
 							<div class="Teste">
 								<p><b>Professor</b></p>
 								<p><?php echo $rows_redações['Nome_Professor'];?></p>

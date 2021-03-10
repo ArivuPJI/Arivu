@@ -66,7 +66,9 @@ if(!empty($_SESSION['id_usuario'])){
 						<div id="DividirPublicação">
                         <div class="Teste">
 							<p><b>Data</b></p>
-								<p><?php echo $rows_redações['Data'];?></p>
+							<?php 
+								$data = $rows_redações['Data']; ?>
+								<p><?php echo date("d-m-Y", strtotime($data))."<br>";?></p>
 							</div>
 							<div class="Teste">
 								<p><b>Professor</b></p>

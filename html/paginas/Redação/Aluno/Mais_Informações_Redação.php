@@ -77,25 +77,35 @@ if(!empty($_SESSION['id_usuario'])){
     </div>
     </div>
 
+<?php
+	$Tabela_Redações = "SELECT * from correcao where id_redacao = '$Id' limit 4"; //Teste
+    $Query_Redações = mysqli_query($conexao, $Tabela_Redações) or die (mysqli_error($conexao));
+	while($rows_redações = mysqli_fetch_assoc($Query_Redações)) 
+        { 
+			$Correção = $rows_redações['titulo'];
+		}
+	
+	if(!empty($Correção)){
+	?>
 	<div class="LateralDireita">
 	<form method="Post" action="">
 	<div class="CorpoFiltros">
 				<!-- Radios Button -->
 				<div class="Filtros">
 	<?php
-		$Tabela_Redações = "SELECT * from correcao where id_redacao = '$Id' limit 4"; //Teste
-        $Query_Redações = mysqli_query($conexao, $Tabela_Redações) or die (mysqli_error($conexao));
 		
 		$Numero = 1;
 		
-        while($rows_redações = mysqli_fetch_assoc($Query_Redações)) 
+        $Tabela_Redações1 = "SELECT * from correcao where id_redacao = '$Id' limit 4"; //Teste
+    $Query_Redações1 = mysqli_query($conexao, $Tabela_Redações1) or die (mysqli_error($conexao));
+	while($rows_redações1 = mysqli_fetch_assoc($Query_Redações1)) 
         { 
-			$id_redacao = $rows_redações['id_redacao'];?>
+			$id_redacao = $rows_redações1['id_redacao'];?>
 			<div class="Corpo_Numero">
 			<p class="Numero"><?php  echo $Numero; ?></p>
 			</div>
 			<div class="Correções_Pequenas">
-			<p><?php echo $rows_redações['titulo']; ?></p>
+			<p><?php echo $rows_redações1['titulo']; ?></p>
 		 	</div>
 		<?php $Numero++; }?>
 		</div>
@@ -103,6 +113,10 @@ if(!empty($_SESSION['id_usuario'])){
 		<div class="btnFiltrar">
 		<button><a href="Info_Correções.php?codigo=<?php echo $id_redacao;?>">Ver mais</a></button>
 		</div>
+		<?php }else
+		{ ?>
+			<div class="LateralDireita">
+		<?php } ?>
     </body>
 
 <?php

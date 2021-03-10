@@ -28,6 +28,9 @@ if(!empty($_SESSION['id_usuario'])){
 			<li  class="LateralSelecionado"><a href=""><b>Perfil</b></a></li>
 			<li><a href="../Redação/Professor/Minhas_Redações.php">Redação</a></li>
 			
+			<?php if($_SESSION['Restricao'] == "Professor"){ ?>
+			<li><a href="../Redação/Professor/Minhas_Redações.php">Redação</a></li>
+			<?php }?>
 			<?php if($_SESSION['Restricao'] == "Estudante"){ ?>
 			<li><a href="../Redação/Aluno/Redação_Aluno.php">Redação</a></li>
 			<?php }?>

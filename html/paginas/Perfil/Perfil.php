@@ -26,8 +26,9 @@ if(!empty($_SESSION['id_usuario'])){
 			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
 			<li><a href="../Agenda/Agenda.php">Agenda</a></li>
 			<li  class="LateralSelecionado"><a href=""><b>Perfil</b></a></li>
+			<?php if($_SESSION['Restricao'] == "Professor"){ ?>
 			<li><a href="../Redação/Professor/Minhas_Redações.php">Redação</a></li>
-			
+			<?php }?>
 			<?php if($_SESSION['Restricao'] == "Estudante"){ ?>
 			<li><a href="../Redação/Aluno/Redação_Aluno.php">Redação</a></li>
 			<?php }?>

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../Cadastro.css"/>
+    <link rel="stylesheet" type="text/css" href="../Site do 0/css/Login.css"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../css/imagens/favicon-32x32.png">
     <title>Cadastrar estudante</title>
 </head>
 <body>

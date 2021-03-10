@@ -14,6 +14,7 @@ if(!empty($_SESSION['id_usuario'])){
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
+		<link rel="icon" type="image/png" sizes="32x32" href="../../../../../css/imagens/favicon-32x32.png">
 	<title>Criar Prova</title>
 </head>
 <body>
@@ -124,7 +125,7 @@ if(!empty($_SESSION['id_usuario'])){
             <h2>Crie a sua prova aleatória...</h2>
 			<div class="Corpo_Modo">
 			<div class="Modo" id="Selecionado">
-				<a href="Aleatória/Criar_Prova.php" class="Selecionado" id="A">Aleatória</a>
+				<a href="" class="Selecionado" id="A">Aleatória</a>
 			</div>
 			<div class="Modo">
 				<a class="A" id="A"  href="../Selecionada/Criar_Prova.php">Selecionada</a>

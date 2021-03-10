@@ -12,6 +12,7 @@ if(!empty($_SESSION['id_usuario'])){
         <title>Arivu</title>
         <link rel="stylesheet" type="text/css" href="Redação.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="../../../../css/imagens/favicon-32x32.png">
         <style>
             .form-group{
                 padding: 10px;

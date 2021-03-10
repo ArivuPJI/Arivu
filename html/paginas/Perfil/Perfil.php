@@ -14,6 +14,7 @@ if(!empty($_SESSION['id_usuario'])){
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
+		<link rel="icon" type="image/png" sizes="32x32" href="../../../css/imagens/favicon-32x32.png">
 	<title>Perfil</title>
 </head>
 <body>
@@ -40,7 +41,7 @@ if(!empty($_SESSION['id_usuario'])){
 	<div class="NavegaçãoSuperior">
 	<!-- Pesquisa -->
 		<div class="aSuperior">
-			<a class="SuperiorSelecionado" href="Feed_Eventos.php"><b>Público</b></a>
+			<a class="SuperiorSelecionado" href=""><b>Público</b></a>
 			<a href="Perfil_Privado.php"><b>Privado</b></a>
 		</div>
 	</div>
@@ -72,7 +73,7 @@ if(!empty($_SESSION['id_usuario'])){
     </div>
 
 	<?php
-		$Query_Eventos = "SELECT Id_Feed, Titulo, Descricao, Data, Horario, Materia, Id_Quem_Postou, Restricao, Topico FROM feed where Id_Quem_Postou = '$id_estudante' && Restricao = 'Publico'"; //Pegando dados do evento do banco
+		$Query_Eventos = "SELECT Id_Feed, Titulo, Descricao, Data, Horario, Materia, Id_Quem_Postou, Restricao, Topico, Conteudo FROM feed where Id_Quem_Postou = '$id_estudante' && Restricao = 'Publico'"; //Pegando dados do evento do banco
 		$Eventos = mysqli_query($conexao, $Query_Eventos) or die (mysqli_error($conexao));
 		while($rows_eventos = mysqli_fetch_assoc($Eventos))
 			{ 
@@ -105,7 +106,7 @@ if(!empty($_SESSION['id_usuario'])){
 							<?php }if($rows_eventos['Topico'] == 'Resumo'){ ?>
 	
 							<div class="PublicaçõesResumo">
-							<a class="DescriçãoResumo" href="Info_Perfil_Publico.php?codigo=<?php echo $rows_eventos['Id_Feed']; ?>"><?php echo $rows_eventos['Descricao']?></a>
+							<a class="DescriçãoResumo" href="Info_Perfil_Publico.php?codigo=<?php echo $rows_eventos['Id_Feed']; ?>"><?php echo $rows_eventos['Conteudo']?></a>
 							<div  class="TituloResumo">
 							<h2><?php echo $rows_eventos['Titulo'];?><br></h2>
 							</div>			

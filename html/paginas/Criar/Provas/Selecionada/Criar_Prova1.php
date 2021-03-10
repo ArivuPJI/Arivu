@@ -4,12 +4,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Delete multiple record with checkboxes in PHP Mysqli using Jquery AJAX</title>
+  <title>Criar prova</title>
   <link rel="stylesheet" type="text/css" href="../../../../../css/Teste.css"/>
 	<link rel="stylesheet" type="text/css" href="../Criar_Prova.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../../../css/imagens/favicon-32x32.png">
 </head>
   <body>
       <div class="result">
@@ -60,7 +61,7 @@
           });
           
           if (id.length > 0) {
-              if (confirm("Are you sure want to delete this records")) {
+              if (confirm("Tem certeza que deseja selecionar essas questões?")) {
                 $.ajax({
                     url : "delete.php",
                     type: "POST",
@@ -68,16 +69,16 @@
                     data:{deleteId:id},
                     success:function(response){
                       if (response==1) {
-                          alert("Record delete successfully");
+                          alert("Questões selecionadas com sucesso!");
                           loadData();
                       }else{
-                          alert("Some thing went wrong try again");
+                          alert("Erro ao selecionar as questões");
                       }
                     }
                 });
               }
           }else{
-            alert("Please select atleast one checkbox");
+            alert("Por favor selecione alguma checkbox");
           }
         });
     });

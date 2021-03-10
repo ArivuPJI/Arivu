@@ -14,6 +14,7 @@ if(!empty($_SESSION['id_usuario'])){
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
+		<link rel="icon" type="image/png" sizes="32x32" href="../../../css/imagens/favicon-32x32.png">
 		<title>Perfil</title>
 </head>
 <body>
@@ -33,7 +34,7 @@ if(!empty($_SESSION['id_usuario'])){
 			<li><a href="../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
 			<?php } ?>
 			<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>
-			
+	</div>
 		</div>
     
 		<div class="BodyConteudo"> <!-- Corpo, onde fica todo  conteudo do site -->
@@ -71,27 +72,9 @@ if(!empty($_SESSION['id_usuario'])){
 
     </div>
     </div>
+	</div>
+	<div class="LateralDireita"></div>
 
-	<div class="LateralDireita">
-	<form method="Post" action="">
-	<div class="CorpoFiltros">
-				<!-- Radios Button -->
-				<div class="Filtros">
-	<?php
-		$Tabela_Redações = "SELECT * from correcao where id_redacao = '$Id' limit 4"; //Teste
-        $Query_Redações = mysqli_query($conexao, $Tabela_Redações) or die (mysqli_error($conexao));
-		
-		
-        while($rows_redações = mysqli_fetch_assoc($Query_Redações)) 
-        { 
-			$id_redacao = $rows_redações['id_redacao'];?>
-			<div class="Corpo_Numero">
-			<p class="Numero"><?php  echo $Numero; ?></p>
-			</div>
-			<div class="Correções_Pequenas">
-			<p><?php echo $rows_redações['titulo']; ?></p>
-		 	</div>
-			 <?php } ?>
     </body>
 
 <?php

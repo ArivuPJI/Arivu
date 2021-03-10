@@ -15,6 +15,7 @@ session_start();
         <link href='css/daygrid/main.min.css' rel='stylesheet' />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/personalizado.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../../css/imagens/favicon-32x32.png">
 
         <script src='js/core/main.min.js'></script>
         <script src='js/interaction/main.min.js'></script>
@@ -44,11 +45,11 @@ session_start();
 			<?php }?>
 			<li><a href="../Criar/Resumos/Criar_Resumo.php">Criar</a></li>
 			<?php } ?>
-			<li><?php echo "<a href='../login/Sair.php'>Sair</a>"; ?></li>	
+			<li><?php echo "<a href='../../login/Sair.php'>Sair</a>"; ?></li>	
 	</div>
     </div>
 	
-    <div class="LateralDireita"></div>
+    
     <div class="BodyConteudo"> <!-- Corpo, onde fica todo  conteudo do site -->
 	<div class="NavegaçãoSuperior">
 	<!-- Pesquisa -->
@@ -56,7 +57,9 @@ session_start();
 			<a class="SuperiorSelecionado" href=""><b>Agenda</b></a>
 		</div>
 	</div>
-    </div>
+    </div>    
+
+    
     <div class="Teste">
     <?php
         if (isset($_SESSION['msg'])) {
@@ -205,6 +208,8 @@ session_start();
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="LateralDireita"></div>
     </body>
+    
 </html>

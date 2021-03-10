@@ -14,6 +14,7 @@ if(!empty($_SESSION['id_usuario'])){
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
+		<link rel="icon" type="image/png" sizes="32x32" href="../../../css/imagens/favicon-32x32.png">
 	<title>Feed Eventos</title>
 </head>
 <body>
@@ -132,7 +133,11 @@ if(!empty($_SESSION['id_usuario'])){
 							</div>
 							<div class="Teste">
 							<p><b>Data</b></p>
-								<p><?php echo $rows_eventos['Data'];?></p>
+								
+								<?php 
+								
+								$data = $rows_eventos['Data']; ?>
+								<p><?php echo date("d-m-Y", strtotime($data))."<br>";?></p>
 							</div>
 							<div class="Teste">
 							<p><b>Horário</b></p>

@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 		<script type="text/javascript" src="Pesquisar.js"></script>
 		<script src="https://kit.fontawesome.com/704a3ad3a2.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="../../../css/imagens/favicon-32x32.png">
 	<title>Gabarito</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
 	<div class="NavegaçãoLateral"> <!--Navegação Lateral -->
 	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Arivu</h1>
 	<div class="liLateral">
-			<li><a href="Feed_Eventos.php">Feed</a></li>
+			<li><a href="../Feed/Feed_Eventos.php">Feed</a></li>
 			<li class="LateralSelecionado"><a href="../Provas/Prova.php"><b>Provas</b></a></li>
 			<?php if($_SESSION['Email_pessoal'] != "Sem Conta"){ ?>
 			<li><a href="../Agenda/Agenda.php">Agenda</a></li>
@@ -155,6 +156,7 @@ $respostas = $pdo->prepare("SELECT * FROM `respostas` where id_questao='$id_ques
     }
      ?>
      </div>
+    </div>
     </div>
 <div class="LateralDireita">
 </div>

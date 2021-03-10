@@ -10,6 +10,8 @@ session_start();
 		<meta charset="utf-8">
         <title>Login</title>
         <link rel="stylesheet" type="text/css" href="../Site do 0/css/Login.css"/>
+<link rel="icon" type="image/png" sizes="32x32" href="css/imagens/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="css/imagens/favicon-16x16.png">
 	</head>
 	<body>
         <div class="BodyLogin"> <!-- Div para poder colocar a sombra no fundo -->
@@ -28,7 +30,7 @@ session_start();
             <form method="POST" action="./html/login/PHPLogin.php">
                 <div class="box">
                     <div class="inputBox">
-                        <input type="text" name="Email" autocomplete="off" required>
+                        <input type="Email" name="Email" autocomplete="off" required>
                         <label>Email</label>
                     </div>     
 

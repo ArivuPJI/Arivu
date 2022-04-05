@@ -19,7 +19,7 @@ if(!empty($_SESSION['id_usuario'])){
 <body>
     <div class="LateralDireitaCriar">
 	</div>
-	<div class="NavegaçãoLateral"> <!--Navegação Lateral -->
+	<div class="NavegaçãoLateral"> <!--Navegação barra Lateral -->
 	<img class="LogoLateral" src="../../../css/imagens/Logo_Lateral.png"><h1>Desespero</h1>
 	<div class="liLateral">
 			<li><a href="../Feed/Feed_Eventos.php"><b>Feed</b></a></li>
